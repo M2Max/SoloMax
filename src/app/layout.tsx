@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
+import Link from 'next/link';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,7 +26,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+        <header className="bg-white dark:bg-gray-900 py-4 shadow-md">
+          <div className="container mx-auto px-4">
+            <nav className="flex items-center justify-between">
+              <Link href="/" className="text-xl font-semibold text-gray-800 dark:text-gray-100 hover:text-teal-500">
+                SoloMax
+              </Link>
+              <div className="space-x-6">
+                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-teal-500">
+                  Home
+                </Link>
+                <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-teal-500">
+                  Blog
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <main>{children}</main>
+        <footer className="bg-white dark:bg-gray-900 py-4 mt-8">
+          <div className="container mx-auto px-4 text-center text-gray-600 dark:text-gray-300">
+            &copy; {new Date().getFullYear()} SoloMax. All rights reserved.
+          </div>
+        </footer>
       </body>
     </html>
   );
