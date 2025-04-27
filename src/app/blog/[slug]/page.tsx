@@ -1,57 +1,97 @@
-const articles = [
-  {
-    title: 'First Post',
-    summary: 'This is the first post',
-    slug: 'first-post',
-    date: '2024-01-01',
-    author: 'John Doe',
-    content: 'This is the first post content. It is very long',
-  },
-  {
-    title: 'Second Post',
-    summary: 'This is the second post',
-    slug: 'second-post',
-    date: '2024-01-02',
-    author: 'John Doe',
-    content: 'This is the second post content. It is very long',
-  },
-  {
-    title: 'Third Post',
-    summary: 'This is the third post',
-    slug: 'third-post',
-    date: '2024-01-03',
-    author: 'John Doe',
-    content: 'This is the third post content. It is very long',
-  },
-];
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
+// import Image from 'next/image'; // Uncomment and use if you prefer next/image
 
-async function getArticle(slug: string) {
-  return articles.find((article) => article.slug === slug);
+interface PostData {
+  title: string;
+  summary: string;
+  slug: string;
+  date: string;
+  author: string;
+  image?: string; // Optional image field
 }
 
+interface ArticleData extends PostData {
+  content: string;
+  contentHtml?: string; // Add field for HTML content
+}
+
+async function getArticle(slug: string): Promise<ArticleData | null> {
+  const postsDirectory = path.join(process.cwd(), 'src', 'posts');
+  const filePath = path.join(postsDirectory, `${slug}.md`);
+
+  try {
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
+
+    // Convert markdown to HTML
+    const processedContent = await remark().use(html).process(content);
+    const contentHtml = processedContent.toString();
+
+    return { ...(data as PostData), content, contentHtml, slug } as ArticleData;
+  } catch (error) {
+    console.error(`Error reading post file ${filePath}:`, error);
+    return null;
+  }
+}
+
+// Optional: Generate static params for SSG
+// export async function generateStaticParams() {
+//   const postsDirectory = path.join(process.cwd(), 'src', 'posts');
+//   const filenames = fs.readdirSync(postsDirectory);
+//
+//   return filenames.map((filename) => ({
+//     slug: filename.replace(/\.md$/, ''),
+//   }));
+// }
+
 export default async function Article({ params }: { params: { slug: string } }) {
-  const article = await getArticle(params.slug);
+  const awaitedParams = await params; // Await params as suggested by Next.js error
+  const article = await getArticle(awaitedParams.slug);
 
   if (!article) {
     return <div>Article not found</div>;
   }
 
+  // Temporarily simplify rendering for debugging
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl w-full space-y-8">
+        {/* Only render title and slug for debugging */}
         <h1 className="text-3xl font-semibold text-center text-gray-800 dark:text-gray-100">
           {article.title}
         </h1>
+        <p>Slug: {article.slug}</p>
+
+        {/* 
+        // Uncomment the following sections gradually to identify the source of the error
+
         <div className="text-center text-gray-600 dark:text-gray-400">
           <p>
             By {article.author} on {article.date}
           </p>
         </div>
-        <div className="space-y-4">
-          <p className="text-gray-700 dark:text-gray-300">
-            {article.content}
-          </p>
+
+        {article.image && (
+          <div className="mt-4 mb-6">
+            <img
+              src={article.image}
+              alt={article.title}
+              className="rounded-md object-cover w-full"
+              style={{ maxHeight: '400px' }} // Example style
+            />
+          </div>
+        )}
+
+        <div className="space-y-4 prose dark:prose-invert">
+          {article.contentHtml && (
+            <div dangerouslySetInnerHTML={{ __html: article.contentHtml }} />
+          )}
         </div>
+        */}
       </div>
     </div>
   );
