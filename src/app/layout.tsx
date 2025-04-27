@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
+import { Dancing_Script } from "next/font/google";
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -12,6 +13,12 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+
+const dancingScript = Dancing_Script({
+  variable: '--font-dancing-script',
+  subsets: ['latin'],
+});
+
 
 export const metadata: Metadata = {
   title: 'Firebase Studio App',
@@ -29,7 +36,7 @@ export default function RootLayout({
         <header className="bg-white dark:bg-gray-900 py-4 shadow-md">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
-              <Link href="/" className="text-xl font-semibold text-gray-800 dark:text-gray-100 hover:text-teal-500">
+              <Link href="/" className={`text-xl font-semibold text-gray-800 dark:text-gray-100 hover:text-teal-500 ${dancingScript.variable} font-dancing-script`}>
                 SoloMax
               </Link>
               <div className="space-x-6">
@@ -53,3 +60,4 @@ export default function RootLayout({
     </html>
   );
 }
+
