@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
-import { Dancing_Script } from "next/font/google";
+import { Permanent_Marker } from "next/font/google";
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-const dancingScript = Dancing_Script({
-  variable: '--font-dancing-script',
+const permanentMarker = Permanent_Marker({
+  weight: '400',
+  variable: '--font-permanent-marker',
   subsets: ['latin'],
 });
 
@@ -36,14 +37,14 @@ export default function RootLayout({
         <header className="bg-white dark:bg-gray-900 py-4 shadow-md">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
-              <Link href="/" className={`text-xl font-semibold text-gray-800 dark:text-gray-100 hover:text-teal-500 ${dancingScript.variable} font-dancing-script`}>
+              <Link href="/" className={`text-xl font-semibold text-gray-800 dark:text-gray-100 hover:text-teal-500 ${permanentMarker.variable} font-permanent-marker`}>
                 SoloMax
               </Link>
-              <div className="space-x-6">
-                <Link href="/" className="text-gray-600 dark:text-gray-300 hover:text-teal-500">
+              <div className="space-x-4 flex items-center">
+                <Link href="/" className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-teal-500 transition-colors duration-200">
                   Home
                 </Link>
-                <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-teal-500">
+                <Link href="/blog" className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 hover:text-teal-500 transition-colors duration-200">
                   Blog
                 </Link>
               </div>
