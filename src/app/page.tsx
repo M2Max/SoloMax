@@ -29,6 +29,15 @@ export default function Home() {
             technology, and everything in between.
           </p>
           <p className="text-gray-700 dark:text-gray-300">
+            I've been working in the software industry for over 10 years, and I've had the opportunity to work on a wide variety of projects, from small web applications to large-scale enterprise systems.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300">
+            My areas of expertise include front-end development, back-end development, and cloud computing. I'm also passionate about learning new technologies and staying up-to-date with the latest trends in the industry.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300">
+            In my spare time, I enjoy writing about software development and sharing my knowledge with others. I believe that everyone can learn to code, and I'm committed to making software development more accessible to everyone.
+          </p>
+          <p className="text-gray-700 dark:text-gray-300">
             Here, you'll find a collection of articles covering a wide range
             of topics, from coding tutorials to personal reflections on the tech
             industry.
