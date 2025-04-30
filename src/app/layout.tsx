@@ -1,21 +1,10 @@
 import type {Metadata} from 'next';
-import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 import { Permanent_Marker } from "next/font/google";
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 const permanentMarker = Permanent_Marker({
-  weight: '400',
+  weight: '400', 
   variable: '--font-permanent-marker',
   subsets: ['latin'],
 });
@@ -33,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`font-sans antialiased`}>
         <header className="bg-white dark:bg-gray-900 py-4 shadow-md">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
