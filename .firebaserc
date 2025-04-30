@@ -1,15 +1,5 @@
 {
   "projects": {
-    "default": "sitopersonale-e0bba"
-  },
-  "targets": {
-    "sitopersonale-e0bba": {
-      "hosting": {
-        "sitopersonale-e0bba": [
-          "sitopersonale-e0bba"
-        ]
-      }
-    }
-  },
-  "etags": {}
+    "default": "personalwebsite-88800"
+  }
 }

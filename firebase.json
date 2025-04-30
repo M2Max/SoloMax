@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "target": "sitopersonale-e0bba",
     "public": "out",
     "ignore": [
       "firebase.json",
