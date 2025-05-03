@@ -16,11 +16,18 @@ const metadataTranslations = {
     it: { title: 'Blog', description: 'Leggi gli ultimi articoli dal nostro blog.' }, // Italian metadata translations
 };
 
+// Add generateStaticParams for the blog index page
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'it' }];
+}
 
 // Generate metadata based on locale
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params.locale as keyof typeof metadataTranslations;
-  const tMeta = metadataTranslations[locale] || metadataTranslations.en; // Fallback to English
+export async function generateMetadata({
+  params,
+}: { params: Promise<{ locale: string }> }): Promise<Metadata> { // Type params as Promise
+  const { locale } = await params; // Await params
+  const localeKey = locale as keyof typeof metadataTranslations;
+  const tMeta = metadataTranslations[localeKey] || metadataTranslations.en; // Fallback to English
 
   return {
     title: tMeta.title,
@@ -30,9 +37,12 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 
 // Since this is a Server Component, we can directly accept params
-export default async function BlogIndex({ params }: { params: { locale: string } }) {
-  const locale = params.locale as keyof typeof translations; // Get the current locale, ensure it's a valid key
-  const t = translations[locale] || translations.en; // Fallback to English if locale is invalid
+export default async function BlogIndex({
+  params,
+}: { params: Promise<{ locale: string }> }) { // Type params as Promise
+  const { locale } = await params; // Await params
+  const localeKey = locale as keyof typeof translations; // Get the current locale, ensure it's a valid key
+  const t = translations[localeKey] || translations.en; // Fallback to English if locale is invalid
 
   // Fetch posts metadata FOR THE CURRENT LOCALE using the centralized function
   const articles: PostMetadata[] = getAllPostsMetadata(locale);

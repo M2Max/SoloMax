@@ -35,35 +35,36 @@ const translations = {
   it: { home: 'Home', blog: 'Blog', rights: 'Tutti i diritti riservati.' }, // Italian translations
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params, // Add params to receive locale
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string }; // Define params type
+  params: Promise<{ locale: string }>; // Define params type as Promise
 }>) {
-  const locale = params.locale as keyof typeof translations; // Ensure locale is a valid key
-  const t = translations[locale] || translations.en; // Fallback to English if locale is invalid
+  const { locale } = await params; // Await params
+  const localeKey = locale as keyof typeof translations; // Ensure locale is a valid key
+  const t = translations[localeKey] || translations.en; // Fallback to English if locale is invalid
 
 
   return (
     // Use the locale from params for the lang attribute
-    <html lang={params.locale} className="h-full">
+    <html lang={locale} className="h-full">
       {/* Apply both font variables */}
       <body className={`font-sans antialiased ${permanentMarker.variable} ${caveat.variable} flex flex-col min-h-screen`}>
         <header className="bg-white dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
               {/* Apply Caveat font to the logo */}
-              <Link href={`/${params.locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-caveat transition-colors duration-200`}>
+              <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-caveat transition-colors duration-200`}>
                 SoloMax
               </Link>
               <div className="space-x-4 flex items-center">
                  {/* Update links to include locale */}
-                <Link href={`/${params.locale}/`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
+                <Link href={`/${locale}/`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
                   {t.home}
                 </Link>
-                <Link href={`/${params.locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
+                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
                   {t.blog}
                 </Link>
               </div>

@@ -16,8 +16,8 @@ const translations = {
   it: { notFound: 'Articolo non trovato', by: 'Di', on: 'il' }, // Italian translations
 };
 
-export default async function Article({ params }: { params: { locale: string, slug: string } }) {
-  const { locale, slug } = params;
+export default async function Article({ params }: { params: Promise<{ locale: string, slug: string }> }) {
+  const { locale, slug } = await params; // Await params
   const localeKey = locale as keyof typeof translations; // Ensure locale is a valid key
   const t = translations[localeKey] || translations.en; // Fallback to English
 
@@ -44,7 +44,7 @@ export default async function Article({ params }: { params: { locale: string, sl
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
-      <div className="max-w-3xl w-full space-y-8 bg-white dark:bg-gray-900 shadow-xl rounded-lg p-8 ring-1 ring-gray-200 dark:ring-gray-700">
+      <div className="max-w-3xl w-full space-y-8 bg-white dark:bg-gray-900 shadow-xl rounded-lg p-8 ring-1 ring-gray-200 dark:ring-700">
         <h1 className="text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 tracking-tight">
           {article.title} {/* Title comes from the fetched localized markdown */}
         </h1>
@@ -81,9 +81,9 @@ export default async function Article({ params }: { params: { locale: string, sl
 
 
 // Metadata generation - Adapt for locale if necessary
-type Props = {
-  params: { locale: string, slug: string }
-}
+// type Props = {
+//   params: { locale: string, slug: string }
+// }
 
 // Translations for Metadata - can be expanded
 const metadataTranslations = {
@@ -93,10 +93,10 @@ const metadataTranslations = {
 };
 
 export async function generateMetadata(
-  { params }: Props,
+  { params }: { params: Promise<{ locale: string, slug: string }> }, // Type params as Promise
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const { slug, locale } = params;
+  const { slug, locale } = await params; // Await params
   const localeKey = locale as keyof typeof metadataTranslations; // Access locale
   const tMeta = metadataTranslations[localeKey] || metadataTranslations.en; // Fallback to English
 

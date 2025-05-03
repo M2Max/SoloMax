@@ -15,7 +15,7 @@ const translations = {
     learningTitle: "Continuous Learning",
     learning: "The tech landscape is constantly shifting, and embracing lifelong learning is crucial for staying relevant and effective. I actively participate in online courses, attend tech conferences (both virtual and in-person when possible), contribute to open-source projects, and engage with the developer community. This commitment to continuous improvement allows me to bring fresh perspectives and cutting-edge techniques to my work, ensuring that the solutions I build are not only functional but also modern, scalable, and maintainable. It's about adapting, evolving, and always being curious.",
     contactTitle: "Get In Touch",
-    contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (linked elsewhere), or reach out through the contact information provided (if available). Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or just want to chat about tech, don't hesitate to connect!",
+    contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (linked elsewhere), or reach out through the contact information provided (if available). Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or simply want to chat about tech, don't hesitate to connect!",
   },
   // es: { ... } // Removed Spanish
   it: { // Italian translations
@@ -28,17 +28,22 @@ const translations = {
     sharingTitle: "Condivisione della Conoscenza",
     sharing: "Nel mio tempo libero, canalizzo la mia energia scrivendo sullo sviluppo software e condividendo le mie intuizioni con il mondo attraverso questo blog. Miro a fornire risorse preziose, tutorial e riflessioni sull'industria tecnologica, sperando di ispirare e aiutare gli altri nei loro percorsi di programmazione. Ti invito ad approfondire la sezione del blog, dove scoprirai una raccolta di articoli che coprono una vasta gamma di argomenti, dalle tecniche pratiche di programmazione e pattern architetturali alle discussioni stimolanti sul futuro della tecnologia e le considerazioni etiche che la circondano. Condividere la conoscenza favorisce la crescita di tutti.",
     learningTitle: "Apprendimento Continuo",
-    learning: "Il panorama tecnologico è in continua evoluzione ed è fondamentale abbracciare l'apprendimento permanente per rimanere pertinenti ed efficaci. Partecipo attivamente a corsi online, partecipo a conferenze tecnologiche (sia virtuali che di persona quando possibile), contribuisco a progetti open source e interagisco con la comunità degli sviluppatori. Questo impegno per il miglioramento continuo mi consente di apportare nuove prospettive e tecniche all'avanguardia al mio lavoro, garantendo che le soluzioni che costruisco non siano solo funzionali ma anche moderne, scalabili e manutenibili. Si tratta di adattarsi, evolversi ed essere sempre curiosi.",
-    contactTitle: "Mettiti in Contatto",
-    contact: "Grazie per aver visitato il mio sito web! Sono sempre desideroso di connettermi con altri appassionati di tecnologia, sviluppatori e potenziali collaboratori. Sentiti libero di esplorare il blog, dare un'occhiata ai miei progetti (linkati altrove) o contattarmi tramite le informazioni di contatto fornite (se disponibili). Costruiamo qualcosa di straordinario insieme! Credo nel potere della collaborazione e della comunità. Condividere la conoscenza e imparare dagli altri sono aspetti fondamentali della crescita nel campo della tecnologia. Che tu abbia una domanda, un'idea per un progetto o semplicemente voglia chiacchierare di tecnologia, non esitare a connetterti!",
+    learning: "The tech landscape is constantly shifting, and embracing lifelong learning is crucial for staying relevant and effective. I actively participate in online courses, attend tech conferences (both virtual and in-person when possible), contribute to open-source projects, and engage with the developer community. This commitment to continuous improvement allows me to bring fresh perspectives and cutting-edge techniques to my work, ensuring that the solutions I build are not only functional but also modern, scalable and maintainable. It's about adapting, evolving, and always being curious.",
+    contactTitle: "Get In Touch",
+    contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (linked elsewhere), or reach out through the contact information provided (if available). Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or simply want to chat about tech, don't hesitate to connect!",
   }
 };
 
+// Add generateStaticParams for the root locale page
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'it' }];
+}
 
 // Since this is a Server Component, we can directly accept params
-export default function Home({ params }: { params: { locale: string } }) {
-  const locale = params.locale as keyof typeof translations; // Ensure locale is a valid key
-  const t = translations[locale] || translations.en; // Fallback to English if locale is invalid
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) { // Make component async and type params as Promise
+  const { locale } = await params; // Await params
+  const localeKey = locale as keyof typeof translations; // Ensure locale is a valid key
+  const t = translations[localeKey] || translations.en; // Fallback to English if locale is invalid
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-150px)] py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
@@ -84,7 +89,7 @@ export default function Home({ params }: { params: { locale: string } }) {
 
         {/* Expertise - Image on Right */}
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12 px-4">
-          <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
+           <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.expertiseTitle}</h2>
             <p className="text-base md:text-lg leading-relaxed">
               {t.expertise}
@@ -132,7 +137,7 @@ export default function Home({ params }: { params: { locale: string } }) {
            </div>
           <div className="md:w-1/2">
             <Image
-              src="https://picsum.photos/500/350?random=4" // Slightly larger image
+              src="https://picsum.photos/500/350?random=2" // Using random=2 again for learning image
               alt="Online Course or Conference"
               width={500}
               height={350}
