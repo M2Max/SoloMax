@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import Negotiator from 'negotiator'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 
-// Supported locales
-const locales = ['en', 'es', 'it'] // Added 'it'
+// Supported locales - Updated to only en and it
+const locales = ['en', 'it']
 const defaultLocale = 'en'
 
 function getLocale(request: NextRequest): string {
@@ -30,6 +30,15 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
 
+  // Check if the path is for a static file or API route, ignore if so
+  const isStaticFile = /\.(.*)$/.test(pathname); // Basic check for file extensions
+  const isApiRoute = pathname.startsWith('/api/');
+
+  if (isStaticFile || isApiRoute || pathname.startsWith('/_next/')) {
+    return NextResponse.next();
+  }
+
+
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
@@ -53,6 +62,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
-  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico|.*\\..*).*)'],
+  // Matcher ignoring `/_next/` and `/api/` explicitly
+  // and common static file extensions.
+  matcher: ['/((?!api|_next/static|_next/image|images|favicon.ico|.*\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'],
 }
