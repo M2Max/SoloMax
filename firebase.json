@@ -6,23 +6,6 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [
-      {
-        "source": "/",
-        "destination": "/en/",
-        "type": 301
-      },
-      {
-        "source": "/en",
-        "destination": "/en/",
-        "type": 301
-      },
-      {
-        "source": "/it",
-        "destination": "/it/",
-        "type": 301
-      }
-    ],
     "rewrites": [
       {
         "source": "/en/",
@@ -40,8 +23,6 @@
         "source": "/it/blog",
         "destination": "/it/blog.html"
       }
-      // Add more rewrites for other locale blog posts if needed, or rely on Firebase default behavior
-      // for /en/blog/some-post which might look for /en/blog/some-post.html
     ]
   }
 }
