@@ -2,7 +2,7 @@
 import type {Metadata} from 'next';
 import '../globals.css'; // Adjust path relative to the new location
 import Link from 'next/link';
-import { Permanent_Marker, Caveat } from "next/font/google"; // Import Caveat
+import { Permanent_Marker, Dancing_Script } from "next/font/google"; // Import Dancing_Script
 import { Toaster } from "@/components/ui/toaster" // Import Toaster
 
 
@@ -12,9 +12,8 @@ const permanentMarker = Permanent_Marker({
   subsets: ['latin'],
 });
 
-const caveat = Caveat({ // Define Caveat font
-  weight: ['400', '700'], // Choose weights if needed
-  variable: '--font-caveat',
+const dancingScript = Dancing_Script({
+  variable: '--font-dancing-script',
   subsets: ['latin'],
 });
 
@@ -51,12 +50,12 @@ export default async function RootLayout({
     // Use the locale from params for the lang attribute
     <html lang={locale} className="h-full">
       {/* Apply both font variables */}
-      <body className={`font-sans antialiased ${permanentMarker.variable} ${caveat.variable} flex flex-col min-h-screen`}>
+      <body className={`font-sans antialiased ${permanentMarker.variable} ${dancingScript.variable} flex flex-col min-h-screen`}>
         <header className="bg-white dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
-              {/* Apply Caveat font to the logo */}
-              <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-caveat transition-colors duration-200`}>
+              {/* Apply Dancing Script font to the logo */}
+              <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-dancing-script transition-colors duration-200`}>
                 SoloMax
               </Link>
               <div className="space-x-4 flex items-center">

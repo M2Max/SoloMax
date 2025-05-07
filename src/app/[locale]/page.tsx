@@ -4,11 +4,11 @@ import Image from 'next/image';
 // Translations object - Removed Spanish
 const translations = {
   en: {
-    greeting: "Hello, I'm SoloMax", // Updated Name
-    bio: "A passionate software engineer and blogger.",
+    greeting: "Hello, I'm Max", // Updated Name
+    bio: "A passionate AI & Software Engineer and blogger.",
     welcome: "Welcome to my digital space!",
     introduction: "I'm thrilled to share my journey, insights, and experiences in the ever-evolving world of software development. This platform serves as a hub for my thoughts on coding, technology trends, and the art of problem-solving. With a deep passion for technology and a commitment to continuous learning, I strive to create elegant and efficient solutions. Whether it's building complex web applications or exploring the latest advancements in AI, I enjoy tackling challenges and pushing the boundaries of what's possible. Join me as I navigate the exciting landscape of tech!",
-    expertiseTitle: "My Expertise",
+    expertiseTitle: "Expertise",
     expertise: "My expertise lies in crafting elegant and efficient code, specializing in full-stack development with a focus on modern web technologies like React, Next.js, Node.js, and TypeScript. I also have a keen interest in cloud computing (AWS, Google Cloud) and architecting scalable systems. I'm constantly seeking opportunities to expand my skill set and stay ahead of the curve in this dynamic field. Learning new technologies is not just a part of my job; it's a personal commitment. I firmly believe that coding is a powerful tool for creativity and problem-solving, and I'm dedicated to making software development more accessible.",
     sharingTitle: "Sharing Knowledge",
     sharing: "In my free time, I channel my energy into writing about software development and sharing my insights with the world through this blog. I aim to provide valuable resources, tutorials, and reflections on the tech industry, hoping to inspire and help others on their own coding journeys. I invite you to delve into the blog section, where you'll discover a collection of articles covering a diverse range of subjects, from practical coding techniques and architectural patterns to thought-provoking discussions on the future of technology and the ethical considerations surrounding it. Sharing knowledge fosters growth for everyone involved.",
