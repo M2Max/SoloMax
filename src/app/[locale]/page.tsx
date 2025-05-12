@@ -28,17 +28,17 @@ const translations = {
       { dates: "February 2024", title: "Cambridge C1 Advanced Certification", institution: "Cambridge Assessment English" }
     ],
 
-    learningTitle: "Continuous Learning",
-    learning: "The tech landscape is constantly shifting, and embracing lifelong learning is crucial for staying relevant and effective. I actively participate in online courses, attend tech conferences (both virtual and in-person when possible), contribute to open-source projects, and engage with the developer community. This commitment to continuous improvement allows me to bring fresh perspectives and cutting-edge techniques to my work, ensuring that the solutions I build are not only functional but also modern, scalable, and maintainable. It's about adapting, evolving, and always being curious.",
+    sharingTitle: "Knowledge Sharing",
+    sharing: "In my free time, I channel my energy into writing about software development and sharing my insights with the world through this blog. My commitment isn't driven by monetization goals, but by the desire to document and share my experiments. For this reason, I aim to make the code and methods I use open source, so they can be useful to other developers and AI enthusiasts. I invite you to explore the blog section, where you'll find a collection of articles covering a wide range of topics—from practical programming techniques and architectural patterns to thought-provoking discussions on the future of technology and the ethical considerations surrounding it. Sharing knowledge fosters growth for everyone.",
     contactTitle: "Get In Touch",
-    contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (linked elsewhere), or reach out through the contact information provided (if available). Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or simply want to chat about tech, don't hesitate to connect!",
+    contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (<a class='text-blue-600 hover:underline' href='https://github.com/M2Max'>GitHub</a>), or reach out through email (<a class='text-blue-600 hover:underline' href='mailto:maximiliano.mamone@solomax.dev'>You just need to click here</a>) Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or simply want to chat about tech, don't hesitate to connect!",
   },
   it: {
     greeting: "Ciao, sono Max",
     bio: "Un appassionato ingegnere del software e blogger.",
     welcome: "Benvenuto nel mio spazio digitale!",
     introduction: "Sono entusiasta di condividere il mio percorso, le mie intuizioni ed esperienze nel mondo in continua evoluzione dello sviluppo software e dell'intelligenza artificiale. Questa piattaforma funge da hub per i miei pensieri sull'AI, la programmazione, le tendenze tecnologiche e l'arte della risoluzione dei problemi. Con una profonda passione per la tecnologia e un impegno per l'apprendimento continuo, mi sforzo di creare soluzioni eleganti ed efficienti. Che si tratti di costruire complesse applicazioni web o esplorare gli ultimi progressi nell'IA, mi piace affrontare le sfide e spingere i confini del possibile con le ultime tecnologie!",
- expertiseTitle: "La Mia Esperienza ed Educazione",
+    expertiseTitle: "La Mia Esperienza ed Educazione",
     expertisePart1: "Dopo la laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni, ho intrapreso un percorso professionale  come Data & AI Engineer in Reply, collaborando con Sky Italia su progetti complessi di data engineering e machine learning. Attualmente lavoro come Data Scientist e AI Engineer in Elfo Srl, dove contribuisco allo sviluppo di soluzioni avanzate basate su modelli predittivi e tecnologie AI.",
     expertisePart2: "La mia esperienza risiede nella creazione di codice strettamente intrecciato con modelli di Machine e Deep Learning (anche GPT ma non solo!). Ho anche un vivo interesse per il cloud computing (AWS, Google Cloud) e l'architettura di sistemi scalabili. Cerco costantemente opportunità per ampliare le mie competenze e rimanere all'avanguardia in questo campo dinamico. Imparare nuove tecnologie non è solo una parte del mio lavoro; è un impegno personale.",
 
@@ -57,11 +57,9 @@ const translations = {
     ],
 
     sharingTitle: "Condivisione della Conoscenza",
-    sharing: "Nel mio tempo libero, canalizzo la mia energia scrivendo sullo sviluppo software e condividendo le mie intuizioni con il mondo attraverso questo blog. Miro a fornire risorse preziose, tutorial e riflessioni sull'industria tecnologica, sperando di ispirare e aiutare gli altri nei loro percorsi di programmazione. Ti invito ad approfondire la sezione del blog, dove scoprirai una raccolta di articoli che coprono una vasta gamma di argomenti, dalle tecniche pratiche di programmazione e pattern architetturali alle discussioni stimolanti sul futuro della tecnologia e le considerazioni etiche che la circondano. Condividere la conoscenza favorisce la crescita di tutti.",
-    learningTitle: "Apprendimento Continuo",
-    learning: "The tech landscape is constantly shifting, and embracing lifelong learning is crucial for staying relevant and effective. I actively participate in online courses, attend tech conferences (both virtual and in-person when possible), contribute to open-source projects, and engage with the developer community. This commitment to continuous improvement allows me to bring fresh perspectives and cutting-edge techniques to my work, ensuring that the solutions I build are not only functional but also modern, scalable and maintainable. It's about adapting, evolving, and always being curious.",
+    sharing: "Nel mio tempo libero, canalizzo la mia energia scrivendo sullo sviluppo software e condividendo le mie intuizioni con il mondo attraverso questo blog. Il mio impegno non è guidato da obiettivi di monetizzazione, ma dalla volontà di documentare e condividere le mie sperimentazioni. Per questo motivo, punto a rendere open source il codice e i metodi che utilizzo, affinché possano essere utili ad altri sviluppatori e appassionati dell'intelligenza Artificiale. Ti invito ad approfondire la sezione del blog, dove scoprirai una raccolta di articoli che coprono una vasta gamma di argomenti, dalle tecniche pratiche di programmazione e pattern architetturali alle discussioni stimolanti sul futuro della tecnologia e le considerazioni etiche che la circondano. Condividere la conoscenza favorisce la crescita di tutti.",
     contactTitle: "Get In Touch",
-    contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (linked elsewhere), or reach out through the contact information provided (if available). Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or simply want to chat about tech, don't hesitate to connect!",
+    contact: "Grazie per aver visitato il mio sito! Sono sempre felice di entrare in contatto con altri appassionati di tecnologia, sviluppatori e potenziali collaboratori. Sentiti libero di esplorare il blog, dare un'occhiata ai miei progetti (collegati altrove) o contattarmi tramite mail (<a class='text-blue-600 hover:underline' href='mailto:maximiliano.mamone@solomax.dev'>Ti basta cliccare qui</a>). Costruiamo qualcosa di straordinario insieme! Credo nel potere della collaborazione e della comunità. Condividere conoscenze e imparare dagli altri sono aspetti fondamentali per crescere nel campo della tecnologia. Che tu abbia una domanda, un'idea per un progetto o semplicemente voglia fare due chiacchiere sul mondo tech, non esitare a metterti in contatto!",
   }
 };
 
@@ -175,31 +173,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
            </div>
         </div>
 
-        {/* Learning - Image on Right */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12 px-4">
-           <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
-             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.learningTitle}</h2>
-            <p className="text-base md:text-lg leading-relaxed">
-              {t.learning}
-            </p>
-           </div>
-          <div className="md:w-1/2">
-            <Image
-              src="https://picsum.photos/500/350?random=2" // Using random=2 again for learning image
-              alt="Online Course or Conference"
-              width={500}
-              height={350}
-              className="rounded-xl shadow-xl transform transition duration-500 hover:scale-105"
-              data-ai-hint="learning books education online course conference"
-            />
-          </div>
-        </div>
-
-
         {/* Conclusion */}
         <div className="space-y-4 text-center pt-12 px-4">
            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">{t.contactTitle}</h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">{t.contact}</p>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed" dangerouslySetInnerHTML={{ __html: t.contact }}></p>
            {/* Optional: Add a Call to Action Button */}
            {/* <Button size="lg" className="mt-6">Connect with Me</Button> */}
         </div>
