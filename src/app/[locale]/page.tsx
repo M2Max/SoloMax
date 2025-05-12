@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import WorkTimeline from '../../components/WorkTimeline'; // Import the new component
+import EducationTimeline from '../../components/EducationTimeline'; // Import the new component
 
 // Translations object
 const translations = {
@@ -9,16 +10,22 @@ const translations = {
     bio: "A passionate AI and Software Engineer and blogger.",
     welcome: "Welcome to my digital space!",
     introduction: "I'm excited to share my journey, insights and experiences in the ever-evolving world of software development and artificial intelligence. This platform serves as a hub for my thoughts on AI, programming, technology trends and the art of problem solving. With a deep passion for technology and a commitment to continuous learning, I strive to create elegant and efficient solutions. Whether it's building complex web applications or exploring the latest advances in AI, I enjoy tackling challenges and pushing the boundaries of what's possible with the latest technologies!",
-    expertiseTitle: "My Experience",
+    expertiseTitle: "My Experience & Education",
     expertisePart1: "After graduating in Computer, Electronics and Telecommunications Engineering, I embarked on a professional path as a Data & AI Engineer in Reply, collaborating with Sky Italia on complex data engineering and machine learning projects. I currently work as a Data Scientist and AI Engineer at Elfo Srl, where I contribute to the development of advanced solutions based on predictive models and AI technologies.",
     expertisePart2: "My experience lies in creating code closely intertwined with Machine and Deep Learning models (including GPT but not only!). I also have a keen interest in cloud computing (AWS, Google Cloud) and scalable system architecture. I am constantly looking for opportunities to expand my skills and stay at the forefront in this dynamic field. Learning new technologies is not just part of my job; it's a personal commitment.",
-    
+
     workHistoryTitle: "Work History", // New title for work history
-    workHistory: [ 
-      {dates: "December 2022 - April 2023", company: "Teknomaint Srl"},
-      {dates: "April 2023 - December 2024", company: "Live Reply IT"},
-      {dates: "October 2023 - December 2024", company: "Sky Italia"},
-      {dates: "December 2024 - Currently", company: "Elfo Srl"}
+    workHistory: [
+      { dates: "December 2022 - April 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
+      { dates: "April 2023 - December 2024", company: "Live Reply IT", title: "Data & AI Engineer" },
+      { dates: "October 2023 - December 2024", company: "Sky Italia", title: "Data Engineer" },
+      { dates: "December 2024 - Currently", company: "Elfo Srl", title: "Data Scientist & AI Engineer" }
+    ],
+
+    educationHistoryTitle: "Education", // New title for education history
+    educationHistory: [
+      { dates: "September 2019 - December 2022", title: "Bachelor's Degree in Computer, Electronic and Telecommunications Engineering", institution: "Università degli Studi di Parma" },
+      { dates: "February 2024", title: "Cambridge C1 Advanced Certification", institution: "Cambridge Assessment English" }
     ],
 
     learningTitle: "Continuous Learning",
@@ -31,16 +38,22 @@ const translations = {
     bio: "Un appassionato ingegnere del software e blogger.",
     welcome: "Benvenuto nel mio spazio digitale!",
     introduction: "Sono entusiasta di condividere il mio percorso, le mie intuizioni ed esperienze nel mondo in continua evoluzione dello sviluppo software e dell'intelligenza artificiale. Questa piattaforma funge da hub per i miei pensieri sull'AI, la programmazione, le tendenze tecnologiche e l'arte della risoluzione dei problemi. Con una profonda passione per la tecnologia e un impegno per l'apprendimento continuo, mi sforzo di creare soluzioni eleganti ed efficienti. Che si tratti di costruire complesse applicazioni web o esplorare gli ultimi progressi nell'IA, mi piace affrontare le sfide e spingere i confini del possibile con le ultime tecnologie!",
-    expertiseTitle: "La Mia Esperienza",
+ expertiseTitle: "La Mia Esperienza ed Educazione",
     expertisePart1: "Dopo la laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni, ho intrapreso un percorso professionale  come Data & AI Engineer in Reply, collaborando con Sky Italia su progetti complessi di data engineering e machine learning. Attualmente lavoro come Data Scientist e AI Engineer in Elfo Srl, dove contribuisco allo sviluppo di soluzioni avanzate basate su modelli predittivi e tecnologie AI.",
     expertisePart2: "La mia esperienza risiede nella creazione di codice strettamente intrecciato con modelli di Machine e Deep Learning (anche GPT ma non solo!). Ho anche un vivo interesse per il cloud computing (AWS, Google Cloud) e l'architettura di sistemi scalabili. Cerco costantemente opportunità per ampliare le mie competenze e rimanere all'avanguardia in questo campo dinamico. Imparare nuove tecnologie non è solo una parte del mio lavoro; è un impegno personale.",
 
     workHistoryTitle: "Cronologia Lavorativa", // New title for work history
-    workHistory: [ 
-      {dates: "Dicembre 2022 - Aprile 2023", company: "Teknomaint Srl"},
-      {dates: "Aprile 2023 - Dicembre 2024", company: "Live Reply IT"},
-      {dates: "Ottobre 2023 - Dicembre 2024", company: "Sky Italia"},
-      {dates: "Dicembre 2024 - Attualmente", company: "Elfo Srl"}
+    workHistory: [
+      { dates: "Dicembre 2022 - Aprile 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
+      { dates: "Aprile 2023 - Dicembre 2024", company: "Live Reply IT", title: "Data & AI Engineer" },
+      { dates: "Ottobre 2023 - Dicembre 2024", company: "Sky Italia", title: "Data Engineer" },
+      { dates: "Dicembre 2024 - Attualmente", company: "Elfo Srl", title: "Data Scientist & AI Engineer" }
+    ],
+
+    educationHistoryTitle: "Educazione", // New title for education history
+     educationHistory: [
+      { dates: "Settembre 2019 - Dicembre 2022", title: "Laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni", institution: "Università degli Studi di Parma" },
+      { dates: "Febbraio 2024", title: "Certificazione Cambridge C1 Advanced", institution: "Cambridge Assessment English" }
     ],
 
     sharingTitle: "Condivisione della Conoscenza",
@@ -49,7 +62,7 @@ const translations = {
     learning: "The tech landscape is constantly shifting, and embracing lifelong learning is crucial for staying relevant and effective. I actively participate in online courses, attend tech conferences (both virtual and in-person when possible), contribute to open-source projects, and engage with the developer community. This commitment to continuous improvement allows me to bring fresh perspectives and cutting-edge techniques to my work, ensuring that the solutions I build are not only functional but also modern, scalable and maintainable. It's about adapting, evolving, and always being curious.",
     contactTitle: "Get In Touch",
     contact: "Thank you for visiting my website! I'm always eager to connect with fellow tech enthusiasts, developers, and potential collaborators. Feel free to explore the blog, check out my projects (linked elsewhere), or reach out through the contact information provided (if available). Let's build something amazing together! I believe in the power of collaboration and community. Sharing knowledge and learning from others are fundamental aspects of growth in the technology field. Whether you have a question, a project idea, or simply want to chat about tech, don't hesitate to connect!",
-  },
+  }
 };
 
 // Add generateStaticParams for the root locale page
@@ -106,23 +119,29 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
 
         {/* Expertise - Image on Right */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12 px-4">
+        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-12 px-4">
            <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.expertiseTitle}</h2>
-            <p className="text-base md:text-lg leading-relaxed">
+             <p className="text-base md:text-lg leading-relaxed mb-8">
               {t.expertisePart1}
             </p>
-            <div className="mt-8">
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.workHistoryTitle}</h3>
-              {/* Render WorkTimeline component */}
-              {t.workHistory.map((item, index) => (
-                <WorkTimeline key={index} history={[item]} />
-              ))}
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/2">
+                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.workHistoryTitle}</h3>
+                {t.workHistory.map((item, index) => (
+                  <WorkTimeline key={index} history={[item]} />
+                ))}
+              </div>
+              <div className="md:w-1/2">
+                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.educationHistoryTitle}</h3>
+                {t.educationHistory.map((item, index) => (
+                  <EducationTimeline key={index} history={[item]} />
+                ))}
+              </div>
             </div>
-            <p className="text-base md:text-lg leading-relaxed">
+            <p className="text-base md:text-lg leading-relaxed mt-8">
               {t.expertisePart2}
             </p>
-            {/* Work History Visualization */}
            </div>
           <div className="md:w-1/2">
             <Image
