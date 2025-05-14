@@ -16,10 +16,12 @@ const translations = {
 
     workHistoryTitle: "Work History", // New title for work history
     workHistory: [
+      { dates: "October 2022 - December 2022", company: "ENAC Emilia Romagna", title: "Computer Science Teacher" },
       { dates: "December 2022 - April 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
       { dates: "April 2023 - December 2024", company: "Live Reply IT", title: "Data & AI Engineer" },
       { dates: "October 2023 - December 2024", company: "Sky Italia", title: "Data Engineer" },
-      { dates: "December 2024 - Currently", company: "Elfo Srl", title: "Data Scientist & AI Engineer" }
+      { dates: "December 2024 - Currently", company: "Elfo Srl", title: "Data Scientist & AI Engineer" },
+      { dates: "May 2025 - June 2025", company: "ENAC Emilia Romagna", title: "Artificial Intelligence Teacher"}
     ],
 
     educationHistoryTitle: "Education", // New title for education history
@@ -38,19 +40,21 @@ const translations = {
     bio: "Un appassionato ingegnere del software e blogger.",
     welcome: "Benvenuto nel mio spazio digitale!",
     introduction: "Sono entusiasta di condividere il mio percorso, le mie intuizioni ed esperienze nel mondo in continua evoluzione dello sviluppo software e dell'intelligenza artificiale. Questa piattaforma funge da hub per i miei pensieri sull'AI, la programmazione, le tendenze tecnologiche e l'arte della risoluzione dei problemi. Con una profonda passione per la tecnologia e un impegno per l'apprendimento continuo, mi sforzo di creare soluzioni eleganti ed efficienti. Che si tratti di costruire complesse applicazioni web o esplorare gli ultimi progressi nell'IA, mi piace affrontare le sfide e spingere i confini del possibile con le ultime tecnologie!",
-    expertiseTitle: "La Mia Esperienza ed Educazione",
+    expertiseTitle: "La Mia Esperienza e Formazione",
     expertisePart1: "Dopo la laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni, ho intrapreso un percorso professionale  come Data & AI Engineer in Reply, collaborando con Sky Italia su progetti complessi di data engineering e machine learning. Attualmente lavoro come Data Scientist e AI Engineer in Elfo Srl, dove contribuisco allo sviluppo di soluzioni avanzate basate su modelli predittivi e tecnologie AI.",
     expertisePart2: "La mia esperienza risiede nella creazione di codice strettamente intrecciato con modelli di Machine e Deep Learning (anche GPT ma non solo!). Ho anche un vivo interesse per il cloud computing (AWS, Google Cloud) e l'architettura di sistemi scalabili. Cerco costantemente opportunità per ampliare le mie competenze e rimanere all'avanguardia in questo campo dinamico. Imparare nuove tecnologie non è solo una parte del mio lavoro; è un impegno personale.",
 
     workHistoryTitle: "Cronologia Lavorativa", // New title for work history
     workHistory: [
+      { dates: "Ottobre 2022 - Dicembre 2022", company: "ENAC Emilia Romagna", title: "Insegnante corso di Informatica" },
       { dates: "Dicembre 2022 - Aprile 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
       { dates: "Aprile 2023 - Dicembre 2024", company: "Live Reply IT", title: "Data & AI Engineer" },
       { dates: "Ottobre 2023 - Dicembre 2024", company: "Sky Italia", title: "Data Engineer" },
-      { dates: "Dicembre 2024 - Attualmente", company: "Elfo Srl", title: "Data Scientist & AI Engineer" }
+      { dates: "Dicembre 2024 - Attualmente", company: "Elfo Srl", title: "Data Scientist & AI Engineer" },
+      { dates: "Maggio 2025 - Giugno 2025", company: "ENAC Emilia Romagna", title: "Insegnante corso di Intelligenza Artificiale"}
     ],
 
-    educationHistoryTitle: "Educazione", // New title for education history
+    educationHistoryTitle: "Formazione", // New title for education history
      educationHistory: [
       { dates: "Settembre 2019 - Dicembre 2022", title: "Laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni", institution: "Università degli Studi di Parma" },
       { dates: "Febbraio 2024", title: "Certificazione Cambridge C1 Advanced", institution: "Cambridge Assessment English" }
@@ -117,62 +121,65 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
 
         {/* Expertise - Image on Right */}
-        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-12 px-4">
-           <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
-             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.expertiseTitle}</h2>
-             <p className="text-base md:text-lg leading-relaxed mb-8">
-              {t.expertisePart1}
-            </p>
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="md:w-1/2">
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.workHistoryTitle}</h3>
-                {t.workHistory.map((item, index) => (
-                  <WorkTimeline key={index} history={[item]} />
-                ))}
-              </div>
-              <div className="md:w-1/2">
-                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">{t.educationHistoryTitle}</h3>
-                {t.educationHistory.map((item, index) => (
-                  <EducationTimeline key={index} history={[item]} />
-                ))}
-              </div>
-            </div>
-            <p className="text-base md:text-lg leading-relaxed mt-8">
-              {t.expertisePart2}
-            </p>
-           </div>
+        <div className="flex flex-col md:flex-row items-start gap-10 md:gap-12 px-4 mb-8">
+ <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.expertiseTitle}</h2>
+          <p className="text-base md:text-lg leading-relaxed mb-8">
+ {t.expertisePart1}
+ </p>
+          </div>
+ <div className="md:w-1/2">
+          <Image
+          src="https://picsum.photos/500/350?random=2" // Slightly larger image
+          alt="Cloud Architecture Diagram"
+          width={500}
+          height={350}
+          className="rounded-xl shadow-xl transform transition duration-500 hover:scale-105"
+          data-ai-hint="cloud computing network server architecture diagram"
+ />
+          </div>
+ </div>
+          {/* Work and Education History (Centered) */}
+          <div className="flex flex-col items-center px-4 w-full">
+          <div className="flex flex-col md:flex-row gap-8 w-full max-w-3xl"> {/* Limit width and center */}
           <div className="md:w-1/2">
-            <Image
-              src="https://picsum.photos/500/350?random=2" // Slightly larger image
-              alt="Cloud Architecture Diagram"
-              width={500}
-              height={350}
-              className="rounded-xl shadow-xl transform transition duration-500 hover:scale-105"
-               data-ai-hint="cloud computing network server architecture diagram"
-            />
+ <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 text-center md:text-left">{t.workHistoryTitle}</h3>
+          {t.workHistory.map((item, index) => (
+          <WorkTimeline key={index} history={[item]} />
+          ))}
           </div>
+          <div className="md:w-1/2">
+ <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4 text-center md:text-left">{t.educationHistoryTitle}</h3>
+          {t.educationHistory.map((item, index) => (
+ <EducationTimeline key={index} history={[item]} />
+ ))}          </div>
         </div>
-
-         {/* Blogging - Image on Left */}
-        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-12 px-4">
-           <div className="md:w-1/2 order-2 md:order-1">
-            <Image
-              src="https://picsum.photos/500/350?random=3" // Slightly larger image
-              alt="Person Writing on Laptop"
-              width={500}
-              height={350}
-              className="rounded-xl shadow-xl transform transition duration-500 hover:scale-105"
-              data-ai-hint="blogging writing keyboard laptop person"
-            />
-          </div>
-          <div className="md:w-1/2 order-1 md:order-2 space-y-4 text-gray-700 dark:text-gray-300">
-             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.sharingTitle}</h2>
+        {/* Second part of Expertise */}          
+        <div className="mt-8 text-gray-700 dark:text-gray-300 max-w-3xl"> {/* Limit width and center */}          
+            <p className="text-base md:text-lg leading-relaxed text-center md:text-left">              
+              {t.expertisePart2}              
+            </p>           
+          </div>           
+        </div>        
+        {/* Knowledge Sharing - Image on Left */ } 
+        <div className ="flex flex-col md:flex-row items-center gap-10 md:gap-12 px-4">
+          <div className="md:w-1/2 order-2 md:order-1">           
+            <Image  src="https://picsum.photos/500/350?random=3"       
+                    alt="Person Writing on Laptop"              
+                    width={500}             
+                    height={350}               
+                    className="rounded-xl shadow-xl transform transition duration-500 hover:scale-105"              
+                    data-ai-hint="blogging writing keyboard laptop person"/>
+          </div>          
+          <div className="md:w-1/2 order-1 md:order-2 space-y-4 text-gray-700 dark:text-gray-300">             
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+              {t.sharingTitle}
+            </h2>            
             <p className="text-base md:text-lg leading-relaxed">
-              {t.sharing}
-            </p>
-           </div>
+              {t.sharing}            
+            </p>           
+          </div>        
         </div>
-
         {/* Conclusion */}
         <div className="space-y-4 text-center pt-12 px-4">
            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">{t.contactTitle}</h2>
