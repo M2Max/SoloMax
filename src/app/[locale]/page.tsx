@@ -16,12 +16,11 @@ const translations = {
 
     workHistoryTitle: "Work History", // New title for work history
     workHistory: [
-      { dates: "October 2022 - December 2022", company: "ENAC Emilia Romagna", title: "Computer Science Teacher" },
-      { dates: "December 2022 - April 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
-      { dates: "April 2023 - December 2024", company: "Live Reply IT", title: "Data & AI Engineer" },
-      { dates: "October 2023 - December 2024", company: "Sky Italia", title: "Data Engineer" },
       { dates: "December 2024 - Currently", company: "Elfo Srl", title: "Data Scientist & AI Engineer" },
-      { dates: "May 2025 - June 2025", company: "ENAC Emilia Romagna", title: "Artificial Intelligence Teacher"}
+      { dates: "May 2025 - June 2025", company: "ENAC Emilia Romagna", title: "Artificial Intelligence Teacher"},
+      { dates: "April 2023 - December 2024", company: "Live Reply IT | Sky Italia", title: "Data & AI Engineer" },
+      { dates: "December 2022 - April 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
+      { dates: "October 2022 - December 2022", company: "ENAC Emilia Romagna", title: "Computer Science Teacher" }
     ],
 
     educationHistoryTitle: "Education", // New title for education history
@@ -46,12 +45,11 @@ const translations = {
 
     workHistoryTitle: "Cronologia Lavorativa", // New title for work history
     workHistory: [
-      { dates: "Ottobre 2022 - Dicembre 2022", company: "ENAC Emilia Romagna", title: "Insegnante corso di Informatica" },
-      { dates: "Dicembre 2022 - Aprile 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
-      { dates: "Aprile 2023 - Dicembre 2024", company: "Live Reply IT", title: "Data & AI Engineer" },
-      { dates: "Ottobre 2023 - Dicembre 2024", company: "Sky Italia", title: "Data Engineer" },
       { dates: "Dicembre 2024 - Attualmente", company: "Elfo Srl", title: "Data Scientist & AI Engineer" },
-      { dates: "Maggio 2025 - Giugno 2025", company: "ENAC Emilia Romagna", title: "Insegnante corso di Intelligenza Artificiale"}
+      { dates: "Maggio 2025 - Giugno 2025", company: "ENAC Emilia Romagna", title: "Insegnante corso di Intelligenza Artificiale"},
+      { dates: "Aprile 2023 - Dicembre 2024", company: "Live Reply IT | Sky Italia", title: "Data & AI Engineer" },
+      { dates: "Dicembre 2022 - Aprile 2023", company: "Teknomaint Srl", title: "Full Stack Web Developer" },
+      { dates: "Ottobre 2022 - Dicembre 2022", company: "ENAC Emilia Romagna", title: "Insegnante corso di Informatica" }
     ],
 
     educationHistoryTitle: "Formazione", // New title for education history
