@@ -7,7 +7,7 @@ import EducationTimeline from '../../components/EducationTimeline'; // Import th
 const translations = {
   en: {
     greeting: "Hello, I'm Max",
-    bio: "A passionate AI and Software Engineer and blogger.",
+    bio: "Software engineer, AI enthusiast, and blogger.",
     welcome: "Welcome to my digital space!",
     introduction: "I'm excited to share my journey, insights and experiences in the ever-evolving world of software development and artificial intelligence. This platform serves as a hub for my thoughts on AI, programming, technology trends and the art of problem solving. With a deep passion for technology and a commitment to continuous learning, I strive to create elegant and efficient solutions. Whether it's building complex web applications or exploring the latest advances in AI, I enjoy tackling challenges and pushing the boundaries of what's possible with the latest technologies!",
     expertiseTitle: "My Experience & Education",
@@ -37,7 +37,7 @@ const translations = {
   },
   it: {
     greeting: "Ciao, sono Max",
-    bio: "Un appassionato ingegnere del software e blogger.",
+    bio: "Ingegnere, appasionato di AI e blogger.",
     welcome: "Benvenuto nel mio spazio digitale!",
     introduction: "Sono entusiasta di condividere il mio percorso, le mie intuizioni ed esperienze nel mondo in continua evoluzione dello sviluppo software e dell'intelligenza artificiale. Questa piattaforma funge da hub per i miei pensieri sull'AI, la programmazione, le tendenze tecnologiche e l'arte della risoluzione dei problemi. Con una profonda passione per la tecnologia e un impegno per l'apprendimento continuo, mi sforzo di creare soluzioni eleganti ed efficienti. Che si tratti di costruire complesse applicazioni web o esplorare gli ultimi progressi nell'IA, mi piace affrontare le sfide e spingere i confini del possibile con le ultime tecnologie!",
     expertiseTitle: "La Mia Esperienza e Formazione",
