@@ -20,8 +20,8 @@ const dancingScript = Dancing_Script({
 
 
 export const metadata: Metadata = {
-  title: 'SoloMax Personal Blog', // Updated Title
-  description: 'A personal blog by SoloMax', // Updated Description
+  title: 'Maximiliano Mamone', // Updated Title
+  description: 'A personal blog by Maximiliano Mamone', // Updated Description
 };
 
 // Define supported locales for static generation if needed (usually handled by middleware dynamically)
@@ -84,7 +84,7 @@ export default async function RootLayout({
          <Toaster /> {/* Add Toaster here */}
         <footer className="bg-white dark:bg-gray-900 py-6 mt-auto border-t border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} SoloMax. {t.rights}
+            &copy; {new Date().getFullYear()} Maximiliano Mamone. {t.rights}
           </div>
         </footer>
       </body>
