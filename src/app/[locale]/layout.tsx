@@ -1,7 +1,7 @@
 
 import type {Metadata} from 'next';
 import '../globals.css'; // Adjust path relative to the new location
-import Link from 'next/link';
+import Link from 'next/link'; // Import Link
 import { Permanent_Marker, Dancing_Script } from "next/font/google"; // Import Dancing_Script
 import Image from 'next/image'; // Import Image component
 import { Toaster } from "@/components/ui/toaster" // Import Toaster
@@ -60,10 +60,19 @@ export default async function RootLayout({
                 <Image src="/MnM.png" alt="SoloMax Logo" width={100} height={100} />
               </Link>
               <div className="space-x-4 flex items-center">
-                 {/* Update links to include locale */}
-                <Link href={`/${locale}/`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
-                  {t.home}
+                {/* Social Icons */}
+                {/* TODO: Add YouTube link */}
+                <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer">
+                  <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
+                <Link href="https://www.linkedin.com/in/maximiliano-mamone/" target="_blank" rel="noopener noreferrer">
+                  <Image src="/icons/linkedin.png" alt="LinkedIn" width={24} height={24} className="filter dark:filter-none" />
+                </Link>
+                <Link href="https://www.instagram.com/mamone_max/" target="_blank" rel="noopener noreferrer">
+                  <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} className="filter dark:filter-none" />
+                </Link>
+
+                {/* Update links to include locale */}
                 <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
                   {t.blog}
                 </Link>
