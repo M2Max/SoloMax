@@ -11,9 +11,9 @@ const translations = {
 };
 
 const metadataTranslations = {
-    en: { title: 'Blog', description: 'Read the latest articles from our blog.' },
+    en: { title: 'Blog', description: 'Read the latest articles from my blog.' },
     // es: { title: 'Blog', description: 'Lee los últimos artículos de nuestro blog.' }, // Removed Spanish
-    it: { title: 'Blog', description: 'Leggi gli ultimi articoli dal nostro blog.' }, // Italian metadata translations
+    it: { title: 'Blog', description: 'Leggi gli ultimi articoli dal mio blog.' }, // Italian metadata translations
 };
 
 // Add generateStaticParams for the blog index page

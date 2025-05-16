@@ -83,7 +83,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="text-center px-4">
           <Image
             src="https://picsum.photos/120/120" // Slightly larger avatar
-            alt="SoloMax Avatar"
+            alt="Max Avatar"
             width={120}
             height={120}
             className="rounded-full mx-auto mb-6 shadow-lg border-4 border-white dark:border-gray-700"
