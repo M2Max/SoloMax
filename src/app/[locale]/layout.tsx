@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import '../globals.css'; // Adjust path relative to the new location
 import Link from 'next/link';
 import { Permanent_Marker, Dancing_Script } from "next/font/google"; // Import Dancing_Script
+import Image from 'next/image'; // Import Image component
 import { Toaster } from "@/components/ui/toaster" // Import Toaster
 
 
@@ -56,7 +57,7 @@ export default async function RootLayout({
             <nav className="flex items-center justify-between">
               {/* Apply Dancing Script font to the logo */}
               <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-dancing-script transition-colors duration-200`}>
-                SoloMax
+                <Image src="/MnM.png" alt="SoloMax Logo" width={100} height={100} />
               </Link>
               <div className="space-x-4 flex items-center">
                  {/* Update links to include locale */}
