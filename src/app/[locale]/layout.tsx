@@ -55,13 +55,18 @@ export default async function RootLayout({
         <header className="bg-white dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
           <div className="container mx-auto px-4">
             <nav className="flex items-center justify-between">
+              <div className="space-x-4 flex items-center">
+                {/* Update links to include locale */}
+                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
+                  {t.blog}
+                </Link>
+              </div>
               {/* Apply Dancing Script font to the logo */}
               <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-dancing-script transition-colors duration-200`}>
                 <Image src="/MnM.png" alt="Logo" width={100} height={100} />
               </Link>
               <div className="space-x-4 flex items-center">
                 {/* Social Icons */}
-                {/* TODO: Add YouTube link */}
                 <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer">
                   <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
@@ -70,11 +75,6 @@ export default async function RootLayout({
                 </Link>
                 <Link href="https://www.instagram.com/mamone_max/" target="_blank" rel="noopener noreferrer">
                   <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} className="filter dark:filter-none" />
-                </Link>
-
-                {/* Update links to include locale */}
-                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
-                  {t.blog}
                 </Link>
               </div>
             </nav>
