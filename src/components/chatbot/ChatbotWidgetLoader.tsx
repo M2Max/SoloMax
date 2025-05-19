@@ -4,7 +4,7 @@
 import { useEffect } from 'react';
 
 interface ChatbotWidgetLoaderProps {
-  apiKey: string;
+  apiKey?: string;
   themeColor?: string;
   initialGreeting?: string;
   position?: string;
@@ -32,7 +32,7 @@ export function ChatbotWidgetLoader({
     const iframeId = 'webassist-ai-widget-iframe';
     let existingIframe = document.getElementById(iframeId) as HTMLIFrameElement | null;
 
-    const iframeSrc = `${config.hostUrl}/chatbot-frame?apiKey=${encodeURIComponent(config.apiKey)}&themeColor=${encodeURIComponent(config.themeColor)}&initialGreeting=${encodeURIComponent(config.initialGreeting)}&position=${encodeURIComponent(config.position)}`;
+    const iframeSrc = `${config.hostUrl}/chatbot-frame?apiKey=${encodeURIComponent(config.apiKey ? config.apiKey : '')}&themeColor=${encodeURIComponent(config.themeColor)}&initialGreeting=${encodeURIComponent(config.initialGreeting)}&position=${encodeURIComponent(config.position)}`;
 
     if (existingIframe) {
       if (existingIframe.src !== iframeSrc) {

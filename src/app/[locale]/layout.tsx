@@ -85,16 +85,16 @@ export default async function RootLayout({
          <Toaster /> {/* Add Toaster here */}
         <footer className="bg-white dark:bg-gray-900 py-6 mt-auto border-t border-gray-200 dark:border-gray-700">
           <div className="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Maximiliano Mamone. {t.rights}
+            &copy; {new Date().getFullYear()} Maximiliano Mamone.{t.rights}
           </div>
         </footer>
         <ChatbotWidgetLoader
-          apiKey="AIzaSyB-hGTtZ2Zr8dh08XD4VSzrX03aSmWyCUE"
+          apiKey={process.env.NEXT_PUBLIC_GEMINI_API_KEY} 
           themeColor="#000000"
           initialGreeting="Hello! How can I assist you today?"
           position="bottom-right"
           hostUrl="https://9000-firebase-studio-1747674601812.cluster-ombtxv25tbd6yrjpp3lukp6zhc.cloudworkstations.dev"
-        />
+          />
       </body>
     </html>
   );
