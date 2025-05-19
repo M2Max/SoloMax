@@ -4,7 +4,9 @@ import '../globals.css'; // Adjust path relative to the new location
 import Link from 'next/link'; // Import Link
 import { Permanent_Marker, Dancing_Script } from "next/font/google"; // Import Dancing_Script
 import Image from 'next/image'; // Import Image component
+// import Script from 'next/script'; // Import the Script component - Not directly used for this widget
 import { Toaster } from "@/components/ui/toaster" // Import Toaster
+import { ChatbotWidgetLoader } from '@/components/chatbot/ChatbotWidgetLoader';
 
 
 const permanentMarker = Permanent_Marker({
@@ -46,7 +48,6 @@ export default async function RootLayout({
   const localeKey = locale as keyof typeof translations; // Ensure locale is a valid key
   const t = translations[localeKey] || translations.en; // Fallback to English if locale is invalid
 
-
   return (
     // Use the locale from params for the lang attribute
     <html lang={locale} className="h-full">
@@ -87,6 +88,13 @@ export default async function RootLayout({
             &copy; {new Date().getFullYear()} Maximiliano Mamone. {t.rights}
           </div>
         </footer>
+        <ChatbotWidgetLoader
+          apiKey="AIzaSyB-hGTtZ2Zr8dh08XD4VSzrX03aSmWyCUE"
+          themeColor="#000000"
+          initialGreeting="Hello! How can I assist you today?"
+          position="bottom-right"
+          hostUrl="https://9000-firebase-studio-1747674601812.cluster-ombtxv25tbd6yrjpp3lukp6zhc.cloudworkstations.dev"
+        />
       </body>
     </html>
   );
