@@ -6,7 +6,7 @@ import { Permanent_Marker, Dancing_Script } from "next/font/google"; // Import D
 import Image from 'next/image'; // Import Image component
 // import Script from 'next/script'; // Import the Script component - Not directly used for this widget
 import { Toaster } from "@/components/ui/toaster" // Import Toaster
-import { ChatbotWidgetLoader } from '@/components/chatbot/ChatbotWidgetLoader';
+// import { ChatbotWidgetLoader } from '@/components/chatbot/ChatbotWidgetLoader';
 
 
 const permanentMarker = Permanent_Marker({
@@ -53,20 +53,27 @@ export default async function RootLayout({
     <html lang={locale} className="h-full">
       {/* Apply both font variables */}
       <body className={`font-sans antialiased ${permanentMarker.variable} ${dancingScript.variable} flex flex-col min-h-screen`}>
-        <header className="bg-white dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
-          <div className="container mx-auto px-4">
+      <header className="bg-white dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
+          <div className="container mx-auto">
+            {/* Ensure nav is flex and items-center */}
             <nav className="flex items-center justify-between">
-              <div className="space-x-4 flex items-center">
-                {/* Update links to include locale */}
+
+              {/* Left Section: Add flex-1 and justify-start */}
+              <div className="flex-1 flex justify-start items-center space-x-4">
                 <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
                   {t.blog}
                 </Link>
               </div>
-              {/* Apply Dancing Script font to the logo */}
-              <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-dancing-script transition-colors duration-200`}>
-                <Image src="/MnM.png" alt="Logo" width={80} height={37} />
-              </Link>
-              <div className="space-x-4 flex items-center">
+
+              {/* Center Logo: No flex-1 needed */}
+              <div className="flex-shrink-0"> {/* Optional: Prevents logo from shrinking if space gets tight */}
+                <Link href={`/${locale}/`} className="text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 transition-colors duration-200">
+                  <Image src="/MnM.png" alt="Logo" width={100} height={37} />
+                </Link>
+              </div>
+
+              {/* Right Section: Add flex-1 and justify-end */}
+              <div className="flex-1 flex justify-end items-center space-x-4">
                 {/* Social Icons */}
                 <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer">
                   <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} className="filter dark:filter-none" />
@@ -78,6 +85,7 @@ export default async function RootLayout({
                   <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
               </div>
+
             </nav>
           </div>
         </header>
@@ -88,13 +96,13 @@ export default async function RootLayout({
             &copy; {new Date().getFullYear()} Maximiliano Mamone.{t.rights}
           </div>
         </footer>
-        <ChatbotWidgetLoader
+        {/* <ChatbotWidgetLoader
           apiKey={process.env.NEXT_PUBLIC_GEMINI_API_KEY} 
           themeColor="#000000"
           initialGreeting="Hello! How can I assist you today?"
           position="bottom-right"
           hostUrl="http://localhost:9003"
-        />
+        /> */}
 
       </body>
     </html>
