@@ -64,7 +64,7 @@ export default async function RootLayout({
               </div>
               {/* Apply Dancing Script font to the logo */}
               <Link href={`/${locale}/`} className={`text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 font-dancing-script transition-colors duration-200`}>
-                <Image src="/MnM.png" alt="Logo" width={100} height={100} />
+                <Image src="/MnM.png" alt="Logo" width={80} height={37} />
               </Link>
               <div className="space-x-4 flex items-center">
                 {/* Social Icons */}
