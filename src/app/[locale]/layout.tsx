@@ -68,7 +68,7 @@ export default async function RootLayout({
               {/* Center Logo: No flex-1 needed */}
               <div className="flex-shrink-0"> {/* Optional: Prevents logo from shrinking if space gets tight */}
                 <Link href={`/${locale}/`} className="text-3xl font-bold text-gray-800 dark:text-gray-100 hover:text-teal-500 transition-colors duration-200">
-                  <Image src="/MnM.png" alt="Logo" width={100} height={37} />
+                  <Image src="/LogoMaxMamoneCut.png" alt="Logo" width={120} height={75} />
                 </Link>
               </div>
 

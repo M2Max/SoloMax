@@ -43,8 +43,8 @@ export default async function Article({ params }: { params: Promise<{ locale: st
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-950">
-      <div className="max-w-3xl w-full space-y-8 bg-white dark:bg-gray-900 shadow-xl rounded-lg p-8 ring-1 ring-gray-200 dark:ring-700">
+    <div className="flex flex-col items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-background dark:bg-my-black">
+      <div className="max-w-3xl w-full space-y-8 bg-[hsl(var(--background)/0.10)] dark:bg-my-black shadow-xl rounded-lg p-8 ring-1 ring-gray-200 dark:ring-700">
         <h1 className="text-4xl font-extrabold text-center text-gray-900 dark:text-gray-100 tracking-tight">
           {article.title} {/* Title comes from the fetched localized markdown */}
         </h1>
