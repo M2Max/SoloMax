@@ -60,7 +60,7 @@ export default async function RootLayout({
 
               {/* Left Section: Add flex-1 and justify-start */}
               <div className="flex-1 flex justify-start items-center space-x-4">
-                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-my-black dark:text-my-black hover:bg-[hsl(var(--primary)/0.15)] hover:bg-primary dark:hover:bg-primary hover:text-primary dark:hover:text-primary transition-colors duration-200 font-medium">
+                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-my-black dark:text-my-black hover:bg-[hsl(var(--primary)/0.15)] dark:hover:bg-primary hover:text-primary dark:hover:text-primary transition-colors duration-200 font-medium">
                   {t.blog}
                 </Link>
               </div>
