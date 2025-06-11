@@ -38,11 +38,11 @@ const translations = {
     greeting: "Ciao, sono Max",
     bio: "Ingegnere, appasionato di AI e blogger.",
     welcome: "Benvenuto nel mio spazio digitale!",
-    introduction: "Sono entusiasta di condividere il mio percorso, le mie intuizioni ed esperienze nel mondo in continua evoluzione dello sviluppo software e dell'intelligenza artificiale. Questa piattaforma funge da hub per i miei pensieri sull'AI, la programmazione, le tendenze tecnologiche e l'arte della risoluzione dei problemi. Con una profonda passione per la tecnologia e un impegno per l'apprendimento continuo, mi sforzo di creare soluzioni eleganti ed efficienti. Che si tratti di costruire complesse applicazioni web o esplorare gli ultimi progressi nell'IA, mi piace affrontare le sfide e spingere i confini del possibile con le ultime tecnologie!",
-    expertiseTitle: "La Mia Esperienza e Formazione",
-    expertisePart1: "Dopo la laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni, ho intrapreso un percorso professionale  come Data & AI Engineer in Reply, collaborando con Sky Italia su progetti complessi di data engineering e machine learning. Attualmente lavoro come Data Scientist e AI Engineer in Elfo Srl, dove contribuisco allo sviluppo di soluzioni avanzate basate su modelli predittivi e tecnologie AI.",
-    expertisePart2: "La mia esperienza risiede nella creazione di codice strettamente intrecciato con modelli di Machine e Deep Learning (anche GPT ma non solo!). Ho anche un vivo interesse per il cloud computing (AWS, Google Cloud) e l'architettura di sistemi scalabili. Cerco costantemente opportunità per ampliare le mie competenze e rimanere all'avanguardia in questo campo dinamico. Imparare nuove tecnologie non è solo una parte del mio lavoro; è un impegno personale.",
-
+    introduction: "Qui trovi idee e progetti su <strong>sviluppo software, intelligenza artificiale, risoluzione di problemi…</strong> insomma, tutto ciò che stuzzica la mia curiosità!<br/> Mi piace sperimentare, imparare, cercare nuove sfide… Su questo sito condivido pensieri, riflessioni domande e soluzioni pratiche che possono essere <strong>utili anche a te.</strong> Se vuoi rimanere aggiornato sulle nuove tecnologie e capire usarle al meglio, sei nel posto giusto!",
+    expertiseTitle: "La mia Esperienza e Formazione",
+    expertisePart1: "Dopo la laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni, ho iniziato a lavorare come Data & Ai Engineer in Reply, collaborando con Sky Italia su progetti di data engineering e machine learning.<br/><strong>Oggi sono Data Scientist e AI Engineer</strong> in Elfo Srl, dove mi occupo di sviluppare soluzioni basate su modelli predittivi e tecnologie AI.",
+    expertisePart2: "Il mio lavoro è quello di creare codice che dialoga con modelli di machine e deep learning (anche GPT ma non solo!), ma mi interesso anche di cloud computing (AWS, Google Cloud) e architettura di sistemi scalabili.<br/> <strong>Mi piace restare sempre aggiornato, provare nuove tecnologie e continuare a crescere.</strong><br/> Non è solo lavoro: è uno sfida continua che mi diverte e mi motiva.",
+    
     workHistoryTitle: "Cronologia Lavorativa", // New title for work history
     workHistory: [
       { dates: "Dicembre 2024 - Attualmente", company: "Elfo Srl", title: "Data Scientist & AI Engineer" },
@@ -58,10 +58,10 @@ const translations = {
       { dates: "Febbraio 2024", title: "Certificazione Cambridge C1 Advanced", institution: "Cambridge Assessment English" }
     ],
 
-    sharingTitle: "Condivisione della Conoscenza",
-    sharing: "Nel mio tempo libero, canalizzo la mia energia scrivendo sullo sviluppo software e condividendo le mie intuizioni con il mondo attraverso questo blog. Il mio impegno non è guidato da obiettivi di monetizzazione, ma dalla volontà di documentare e condividere le mie sperimentazioni. Per questo motivo, punto a rendere open source il codice e i metodi che utilizzo, affinché possano essere utili ad altri sviluppatori e appassionati dell'intelligenza Artificiale. Ti invito ad approfondire la sezione del blog, dove scoprirai una raccolta di articoli che coprono una vasta gamma di argomenti, dalle tecniche pratiche di programmazione e pattern architetturali alle discussioni stimolanti sul futuro della tecnologia e le considerazioni etiche che la circondano. Condividere la conoscenza favorisce la crescita di tutti.",
+    sharingTitle: "Perché scrivo (e condivido)",
+    sharing: "Nel mio tempo libero mi piace scrivere sullo sviluppo software e intelligenza artificiale, condividendo esperimenti, intuizioni e qualche sbaglio lungo il percorso.<br/> Il mio obiettivo? <strong>Documentare quello che imparo nella speranza che possa tornare utile anche ad altri.</strong> Per questo, rendo open source il codice e i metodi che uso: così restano accessibili e si può discuterne e crescere insieme.<br/><br/>Nel blog trovi un po' di tutto, dalle tecniche pratiche di programmazione a discussioni e riflessioni su etica e futuro della tecnologia.<br/>Dacci un'occhiata!",
     contactTitle: "Fatti sentire",
-    contact: "Grazie per aver visitato il mio sito! Sono sempre felice di entrare in contatto con altri appassionati di tecnologia, sviluppatori e persone con più esperienza e conoscenza. Sentiti libero di esplorare il blog, dare un'occhiata ai miei progetti (<a class='text-blue-600 hover:underline' href='https://github.com/M2Max'>GitHub</a>) o contattarmi tramite mail (<a class='text-blue-600 hover:underline' href='mailto:info@maxmamone.it'>Ti basta cliccare qui</a>). Condividere conoscenze e imparare dagli altri sono aspetti fondamentali per crescere nel campo della tecnologia. Che tu abbia una domanda, un'idea per un progetto o semplicemente voglia fare due chiacchiere sul mondo tech, non esitare a metterti in contatto!",
+    contact: "Grazie per essere passato di qui! <strong>Mi fa sempre piacere entrare in contatto con altri appassionati di tecnologia, sviluppatori e persone con più esperienza.</strong><br/> Sentiti libero di esplorare il blog, dare un’occhiata ai miei progetti ((<a class='text-secondary hover:underline' href='https://github.com/M2Max'>GitHub</a>)) o scrivimi se ti va di scambiare due parole (<a class='text-secondary hover:underline' href='mailto:info@maxmamone.it'>Ti basta cliccare qui</a>)<br/>Condividere il sapere e imparare dagli altri è il modo migliore per crescere in questo campo.<br/><br/><strong>Hai una domanda, un progetto in mente o solo voglia di fare due chiacchiere tech? Scrivimi!</strong>",
   }
 };
 
@@ -77,7 +77,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const t = translations[localeKey] || translations.en; // Fallback to English if locale is invalid
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-150px)] py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-150px)] py-16 px-4 sm:px-6 lg:px-8 bg-background dark:bg-my-black">
       <div className="max-w-5xl w-full space-y-16">
         {/* Personal Bio Section */}
         <div className="text-center px-4">
@@ -90,7 +90,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             priority // Load avatar first
             data-ai-hint="avatar profile picture person"
           />
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-gray-100 tracking-tight mb-2">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-my-black dark:text-my-black tracking-tight mb-2">
             {t.greeting}
           </h1>
           <p className="mt-3 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -112,8 +112,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </div>
           <div className="md:w-1/2 order-1 md:order-2 space-y-4 text-gray-700 dark:text-gray-300">
              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.welcome}</h2>
-            <p className="text-base md:text-lg leading-relaxed">
-              {t.introduction}
+            <p className="text-base md:text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t.introduction }}>
             </p>
           </div>
         </div>
@@ -122,9 +121,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <div className="flex flex-col md:flex-row items-start gap-10 md:gap-12 px-4 mb-8">
  <div className="md:w-1/2 space-y-4 text-gray-700 dark:text-gray-300">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">{t.expertiseTitle}</h2>
-          <p className="text-base md:text-lg leading-relaxed mb-8">
- {t.expertisePart1}
- </p>
+          <p className="text-base md:text-lg leading-relaxed mb-8" dangerouslySetInnerHTML={{ __html: t.expertisePart1 }}></p>
           </div>
  <div className="md:w-1/2">
           <Image
@@ -154,9 +151,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
         {/* Second part of Expertise */}          
         <div className="mt-8 text-gray-700 dark:text-gray-300 max-w-3xl"> {/* Limit width and center */}          
-            <p className="text-base md:text-lg leading-relaxed text-center md:text-left">              
-              {t.expertisePart2}              
-            </p>           
+            <p className="text-base md:text-lg leading-relaxed text-center md:text-left" dangerouslySetInnerHTML={{ __html: t.expertisePart2 }}></p>           
           </div>           
         </div>        
         {/* Knowledge Sharing - Image on Left */ } 
@@ -173,9 +168,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
               {t.sharingTitle}
             </h2>            
-            <p className="text-base md:text-lg leading-relaxed">
-              {t.sharing}            
-            </p>           
+            <p className="text-base md:text-lg leading-relaxed" dangerouslySetInnerHTML={{ __html: t.sharing }}></p>           
           </div>        
         </div>
         {/* Conclusion */}

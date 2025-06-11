@@ -53,14 +53,14 @@ export default async function RootLayout({
     <html lang={locale} className="h-full">
       {/* Apply both font variables */}
       <body className={`font-sans antialiased ${permanentMarker.variable} ${dancingScript.variable} flex flex-col min-h-screen`}>
-      <header className="bg-white dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
+      <header className="bg-background dark:bg-gray-900 py-4 shadow-md sticky top-0 z-50">
           <div className="container mx-auto">
             {/* Ensure nav is flex and items-center */}
             <nav className="flex items-center justify-between">
 
               {/* Left Section: Add flex-1 and justify-start */}
               <div className="flex-1 flex justify-start items-center space-x-4">
-                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-200 font-medium">
+                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-my-black dark:text-my-black hover:bg-opacity-1 hover:bg-primary dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors duration-200 font-medium">
                   {t.blog}
                 </Link>
               </div>
@@ -75,13 +75,13 @@ export default async function RootLayout({
               {/* Right Section: Add flex-1 and justify-end */}
               <div className="flex-1 flex justify-end items-center space-x-4">
                 {/* Social Icons */}
-                <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-primary transition-colors duration-200">
                   <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
-                <Link href="https://www.linkedin.com/in/maximiliano-mamone/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.linkedin.com/in/maximiliano-mamone/" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-primary transition-colors duration-200">
                   <Image src="/icons/linkedin.png" alt="LinkedIn" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
-                <Link href="https://www.instagram.com/mamone_max/" target="_blank" rel="noopener noreferrer">
+                <Link href="https://www.instagram.com/mamone_max/" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-primary transition-colors duration-200">
                   <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
               </div>
@@ -89,10 +89,10 @@ export default async function RootLayout({
             </nav>
           </div>
         </header>
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow bg-background">{children}</main>
          <Toaster /> {/* Add Toaster here */}
-        <footer className="bg-white dark:bg-gray-900 py-6 mt-auto border-t border-gray-200 dark:border-gray-700">
-          <div className="container mx-auto px-4 text-center text-gray-500 dark:text-gray-400 text-sm">
+        <footer className="bg-background dark:bg-gray-900 py-6 mt-auto border-t border-gray-200 dark:border-gray-700">
+          <div className="container mx-auto px-4 text-center text-secondary dark:text-secondary text-sm">
             &copy; {new Date().getFullYear()} Maximiliano Mamone.{t.rights}
           </div>
         </footer>
