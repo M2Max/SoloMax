@@ -60,7 +60,7 @@ export default async function RootLayout({
 
               {/* Left Section: Add flex-1 and justify-start */}
               <div className="flex-1 flex justify-start items-center space-x-4">
-                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-my-black dark:text-my-black hover:bg-opacity-1 hover:bg-primary dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary transition-colors duration-200 font-medium">
+                <Link href={`/${locale}/blog`} className="px-3 py-2 rounded-md text-my-black dark:text-my-black hover:bg-[hsl(var(--primary)/0.15)] hover:bg-primary dark:hover:bg-primary hover:text-primary dark:hover:text-primary transition-colors duration-200 font-medium">
                   {t.blog}
                 </Link>
               </div>
@@ -75,13 +75,13 @@ export default async function RootLayout({
               {/* Right Section: Add flex-1 and justify-end */}
               <div className="flex-1 flex justify-end items-center space-x-4">
                 {/* Social Icons */}
-                <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-primary transition-colors duration-200">
+                <Link href="https://www.youtube.com/@MaxMamone" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-[hsl(var(--primary)/0.60)] transition-colors duration-200">
                   <Image src="/icons/youtube.png" alt="YouTube" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
-                <Link href="https://www.linkedin.com/in/maximiliano-mamone/" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-primary transition-colors duration-200">
+                <Link href="https://www.linkedin.com/in/maximiliano-mamone/" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-[hsl(var(--primary)/0.60)] transition-colors duration-200">
                   <Image src="/icons/linkedin.png" alt="LinkedIn" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
-                <Link href="https://www.instagram.com/mamone_max/" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-primary transition-colors duration-200">
+                <Link href="https://www.instagram.com/mamone_max/" target="_blank" rel="noopener noreferrer" className="p-1 rounded-full hover:bg-[hsl(var(--primary)/0.60)] transition-colors duration-200">
                   <Image src="/icons/instagram.png" alt="Instagram" width={24} height={24} className="filter dark:filter-none" />
                 </Link>
               </div>
