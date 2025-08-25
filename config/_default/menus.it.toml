@@ -10,20 +10,3 @@ weight = 1
 name = "Blog"
 url = "/blog"
 weight = 2
-
-
-# footer menu
-[[footer]]
-name = "Informazioni"
-url = "/about"
-weight = 1
-
-[[footer]]
-name = "Elementi"
-url = "/elements"
-weight = 2
-
-[[footer]]
-name = "Privacy"
-url = "/privacy-policy"
-weight = 3
