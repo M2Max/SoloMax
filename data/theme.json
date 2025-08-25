@@ -5,6 +5,8 @@
         "primary": "#121212",
         "body": "#eeede1",
         "border": "#eaeaea",
+        "accent_blue": "4d9f90",
+        "accent_orange": "f4a261",
         "light": "#f6f6f6",
         "dark": "#040404"
       },
@@ -19,6 +21,8 @@
         "primary": "#fff",
         "body": "#13242a",
         "border": "#3E3E3E",
+        "accent_blue": "4d9f90",
+        "accent_orange": "f4a261",
         "light": "#222222",
         "dark": "#fff"
       },
