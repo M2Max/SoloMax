@@ -73,10 +73,35 @@
             {{ end }}
           </div>
         </div>
+        {{ with .timeline }}
+          <div class="mt-8">
+            {{ partial "components/timeline" (dict
+              "WorkTitle" .work_title
+              "EducationTitle" .education_title
+              "Work" .work
+              "Education" .education
+              "WorkDotColor" .work_dot_color
+              "EducationDotColor" .education_dot_color
+              "Note" .note
+            ) }}
+          </div>
+        {{ end }}
       </div>
     </section>
   {{ end }}
   <!-- /Features -->
+
+  {{ with .Params.home_contact_cta }}
+    <section class="section">
+      <div class="container">
+        {{ partial "components/contact-cta" (dict
+          "Title" .title
+          "Content" .content
+          "Button" .button
+        ) }}
+      </div>
+    </section>
+  {{ end }}
 
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}

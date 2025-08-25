@@ -1,0 +1,28 @@
+{{/*
+  Partial: components/contact-cta
+  Inputs (dict):
+    - Title (string)
+    - Content (markdown string)
+    - Button (map: enable, label, link)
+*/}}
+<div class="text-center">
+  {{ with .Title }}
+    <h2 class="mb-6">{{ . | markdownify }}</h2>
+  {{ end }}
+  {{ with .Content }}
+    <div class="mx-auto max-w-3xl text-lg">
+      {{ . | markdownify }}
+    </div>
+  {{ end }}
+  {{ with .Button }}
+    {{ if .enable }}
+      <div class="mt-6">
+        <a
+          class="btn btn-primary"
+          href="{{ .link | relLangURL }}">
+          {{ .label }}
+        </a>
+      </div>
+    {{ end }}
+  {{ end }}
+</div>

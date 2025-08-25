@@ -1,0 +1,68 @@
+{{/*
+  Partial: components/timeline
+  Inputs (dict):
+    - WorkTitle (string)
+    - EducationTitle (string)
+    - Work (slice of maps: company/title, role/subtitle, period)
+    - Education (slice of maps: degree/title, school/subtitle, period)
+    - WorkDotColor (string, e.g., #F59E0B)
+    - EducationDotColor (string, e.g., #10B981)
+*/}}
+<section class="mt-6">
+  <div class="grid gap-10 md:grid-cols-2">
+    <!-- Work timeline -->
+    <div>
+      <h3 class="mb-6 text-h5 lg:text-h4">{{ .WorkTitle | default "Cronologia Lavorativa" }}</h3>
+      {{/* map token -> tailwind class (literal) */}}
+      {{ $colMap := dict "amber" "bg-amber-500" "green" "bg-green-500" "blue" "bg-blue-500" "red" "bg-red-500" "purple" "bg-purple-500" "gray" "bg-gray-500" }}
+      {{ $workClass := or (index $colMap .WorkDotColor) "bg-[#F59E0B]" }}
+      <ul>
+        {{ range .Work }}
+          <li class="relative mb-6 pl-6 border-l border-border dark:border-darkmode-border">
+            <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full {{ $workClass }}"></span>
+            {{ $title := or .company .title }}
+            {{ if $title }}
+              <h4 class="font-semibold">{{ $title | markdownify }}</h4>
+            {{ end }}
+            {{ $subtitle := or .role .subtitle }}
+            {{ if $subtitle }}
+              <p class="text-text-dark/80 dark:text-white/80">{{ $subtitle | markdownify }}</p>
+            {{ end }}
+            {{ with .period }}
+              <p class="text-sm text-text-dark/60 dark:text-white/60">{{ . }}</p>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <!-- Education timeline -->
+    <div>
+      <h3 class="mb-6 text-h5 lg:text-h4">{{ .EducationTitle | default "Formazione" }}</h3>
+      {{ $eduClass := or (index $colMap .EducationDotColor) "bg-[#10B981]" }}
+      <ul>
+        {{ range .Education }}
+          <li class="relative mb-6 pl-6 border-l border-border dark:border-darkmode-border">
+            <span class="absolute -left-[7px] top-1 h-3 w-3 rounded-full {{ $eduClass }}"></span>
+            {{ $title := or .degree .title }}
+            {{ if $title }}
+              <h4 class="font-semibold">{{ $title | markdownify }}</h4>
+            {{ end }}
+            {{ $subtitle := or .school .subtitle }}
+            {{ if $subtitle }}
+              <p class="text-text-dark/80 dark:text-white/80">{{ $subtitle | markdownify }}</p>
+            {{ end }}
+            {{ with .period }}
+              <p class="text-sm text-text-dark/60 dark:text-white/60">{{ . }}</p>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+  {{ with .Note }}
+    <div class="mt-8 max-w-prose mx-auto text-center text-lg">
+      {{ . | markdownify }}
+    </div>
+  {{ end }}
+</section>
