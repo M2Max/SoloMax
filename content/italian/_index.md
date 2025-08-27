@@ -64,14 +64,13 @@ features:
 home_contact_cta:
   title: "Fatti sentire"
   content: >-
-    Grazie per essere passato di qui! **Mi fa sempre piacere entrare in contatto con altri appassionati di tecnologia, sviluppatori e persone con più esperienza.**
-    Sentiti libero di esplorare il blog, dare un'occhiata ai miei progetti ([GitHub](https://github.com)) o scrivimi se ti va di scambiare due parole ([Ti basta cliccare qui](/contact)).
+    Grazie per essere passato di qui!<br> **Mi fa sempre piacere entrare in contatto con altri appassionati di tecnologia, sviluppatori e persone con più esperienza.**
+    Sentiti libero di esplorare il blog, dare un'occhiata ai miei progetti (<u>[GitHub](https://github.com)</u>) o scrivimi se ti va di scambiare due parole (Ti basta cliccare <u>[qui](mailto:info@maxmamone.it)</u>).
     Condividere il sapere e imparare dagli altri è il modo migliore per crescere in questo campo.
 
     **Hai una domanda, un progetto in mente o solo voglia di fare due chiacchiere tech?**
-    Scrivimi!
   button:
     enable: true
     label: "Scrivimi"
-    link: "/contact"
+    link: "mailto:info@maxmamone.it"
 ---
