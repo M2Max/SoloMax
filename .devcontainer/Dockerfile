@@ -40,5 +40,7 @@ RUN git --version && \
     hugo version && \
     go version
 
+RUN npm install -g firebase-tools
+
 # Default shell
 CMD ["/bin/bash"]
