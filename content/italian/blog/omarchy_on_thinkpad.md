@@ -6,7 +6,7 @@ date: 2025-09-15T05:00:00Z
 image: "/images/Thinkpad&Things.jpg"
 categories: ["OpenSource"]
 author: "Maximiliano Mamone"
-tags: ["Linux", "Thinkpad"]
+tags: ["Linux", "Thinkpad", "Omarchy"]
 draft: false
 toc: false
 ---
