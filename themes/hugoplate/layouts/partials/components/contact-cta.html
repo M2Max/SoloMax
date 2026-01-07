@@ -10,7 +10,7 @@
     <h2 class="mb-6">{{ . | markdownify }}</h2>
   {{ end }}
   {{ with .Content }}
-    <div class="mx-auto max-w-3xl text-lg">
+    <div class="mx-auto max-w-3xl text-2xl md:text-lg">
       {{ . | markdownify }}
     </div>
   {{ end }}

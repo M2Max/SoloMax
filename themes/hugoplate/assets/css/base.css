@@ -6,6 +6,11 @@ body {
   @apply bg-body text-base dark:bg-darkmode-body font-primary font-normal leading-relaxed text-text dark:text-darkmode-text;
 }
 
+/* Larger paragraph font size on mobile for better readability */
+p {
+  @apply text-2xl md:text-base;
+}
+
 h1,
 h2,
 h3,

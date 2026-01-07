@@ -32,7 +32,7 @@ features:
     image: "/images/ExperienceAndGrowth.png"
     content: >-
       Dopo la laurea in Ingegneria Informatica, Elettronica e delle Telecomunicazioni, ho iniziato a lavorare come Data & Ai Engineer in Reply, collaborando con Sky Italia su progetti di data engineering e machine learning.<br>
-      **Oggi sono Data Scientist e AI Engineer** in Elfo Srl, dove mi occupo di sviluppare soluzioni basate su modelli predittivi e tecnologie AI.
+      **Oggi sono un Freelance AI Engineer**, mi occupo di aiutare i miei clienti nell'integrazione dell'intelligenza artificiale nei loro processi e nei loro applicativi
     timeline:
       work_title: "Cronologia Lavorativa"
       education_title: "Formazione"
@@ -67,15 +67,16 @@ features:
 
       note: >-
         Il mio lavoro è quello di creare codice che dialoga con modelli di machine e deep learning (anche LLM come GPT ma non solo!),
-        ma mi interesso anche di integrazioni cloud (AWS, Google Cloud) e architettura di sistemi scalabili. <br>
+        ma mi interesso anche di integrazioni cloud (AWS, Google Cloud) e architettura di sistemi scalabili. <br><br> 
         **Mi piace restare sempre aggiornato, provare nuove tecnologie e continuare a crescere.**
         Non è solo lavoro: è uno sfida continua che mi diverte e mi motiva.
 
   - title: "Perché scrivo (e condivido)"
     image: "/images/DocumentAndShare.png"
     content: >-
-      Nel mio tempo libero mi piace pubblicare sullo sviluppo software e intelligenza artificiale, condividendo esperimenti, intuizioni e qualche sbaglio lungo il percorso.<br>
-      Il mio obiettivo? **Documentare quello che imparo nella speranza che possa tornare utile anche ad altri.** Per questo, rendo open source il codice e i metodi che uso: così restano accessibili e si può discuterne e crescere insieme.<br><br>
+      Nel mio tempo libero mi piace pubblicare sullo sviluppo software e intelligenza artificiale, condividendo esperimenti, intuizioni e qualche sbaglio lungo il percorso.<br><br>
+      Il mio obiettivo? <br>
+      **Documentare quello che imparo nella speranza che possa tornare utile anche ad altri.** Per questo, rendo open source il codice e i metodi che uso: così restano accessibili e si può discuterne e crescere insieme.<br><br>
 
 home_contact_cta:
   title: "Fatti sentire"

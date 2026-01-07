@@ -14,8 +14,8 @@
     <div>
       <h3 class="mb-6 text-h5 lg:text-h4">{{ .WorkTitle | default "Cronologia Lavorativa" }}</h3>
       {{/* map token -> tailwind class (literal) */}}
-      {{ $colMap := dict "amber" "bg-amber-500" "green" "bg-green-500" "blue" "bg-blue-500" "red" "bg-red-500" "purple" "bg-purple-500" "gray" "bg-gray-500" }}
-      {{ $workClass := or (index $colMap .WorkDotColor) "bg-[#F59E0B]" }}
+      {{ $colMap := dict "amber" "bg-[#f4a261]" "green" "bg-[#4d9f90]" "blue" "bg-blue-500" "red" "bg-red-500" "purple" "bg-purple-500" "gray" "bg-gray-500" }}
+      {{ $workClass := or (index $colMap .WorkDotColor) "bg-[#f4a261]" }}
       <ul>
         {{ range .Work }}
           <li class="relative mb-6 pl-6 border-l border-border dark:border-darkmode-border">
@@ -39,7 +39,7 @@
     <!-- Education timeline -->
     <div>
       <h3 class="mb-6 text-h5 lg:text-h4">{{ .EducationTitle | default "Formazione" }}</h3>
-      {{ $eduClass := or (index $colMap .EducationDotColor) "bg-[#10B981]" }}
+      {{ $eduClass := or (index $colMap .EducationDotColor) "bg-[#4d9f90]" }}
       <ul>
         {{ range .Education }}
           <li class="relative mb-6 pl-6 border-l border-border dark:border-darkmode-border">
@@ -61,7 +61,7 @@
     </div>
   </div>
   {{ with .Note }}
-    <div class="mt-8 max-w-prose mx-auto text-center text-lg">
+    <div class="mt-8 max-w-prose mx-auto text-center text-2xl md:text-lg">
       {{ . | markdownify }}
     </div>
   {{ end }}
