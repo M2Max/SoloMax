@@ -17,16 +17,16 @@ features:
   - title: "Come posso aiutarti?"
     image: "/images/AIAutomation.png"
     content: >-
-      Posso supportarti nell’uso dell’intelligenza artificiale in modo pratico e mirato. <br>
-      Ti aiuto a automatizzare processi, a valutare se l’AI è davvero utile per il tuo caso e a sviluppare progetti completi che integrano l’AI, dall’idea iniziale alla messa in produzione.<br><br>
+      Posso _**supportarti nell’uso dell’intelligenza artificiale in modo pratico e mirato**_. <br>
+      Ti aiuto a _**automatizzare processi**_, a valutare se l’AI è davvero utile per il tuo caso e a _**sviluppare progetti completi che integrano l’AI**_, dall’idea iniziale alla messa in produzione.<br><br>
 
-      Lavoro anche su modelli addestrati sui tuoi dati, con possibilità di deploy in locale su infrastrutture dedicate, così da garantire controllo totale e massima privacy.<br><br>
+      Lavoro anche su _**modelli addestrati sui tuoi dati**_, con possibilità di _**deploy in locale**_ su infrastrutture dedicate, così da garantire controllo totale e _**massima privacy**_.<br><br>
 
       Se hai già un’idea o vuoi capire da dove partire, possiamo ragionarci insieme.
     button:
       enable: true
-      label: "Chiamami"
-      link: "tel:+393317363689"
+      label: "Scrivimi"
+      link: "mailto:info@maxmamone.it"
 
   - title: "La mia Esperienza e Formazione"
     image: "/images/ExperienceAndGrowth.png"
@@ -80,11 +80,13 @@ features:
 home_contact_cta:
   title: "Fatti sentire"
   content: >-
-    Grazie per essere passato di qui!<br> **Mi fa sempre piacere entrare in contatto con altri appassionati di tecnologia, sviluppatori e persone con più esperienza.**
-    Sentiti libero di esplorare il blog, dare un'occhiata ai miei progetti (<u>[GitHub](https://github.com)</u>) o scrivimi se ti va di scambiare due parole (Ti basta cliccare <u>[qui](mailto:info@maxmamone.it)</u>).
-    Condividere il sapere e imparare dagli altri è il modo migliore per crescere in questo campo.
+    _**Grazie per essere passato di qui!**_<br>
+    Mi fa sempre piacere entrare in contatto con imprenditori, sviluppatori, professionisti e persone curiose di tecnologia.<br><br>
 
-    **Hai una domanda, un progetto in mente o solo voglia di fare due chiacchiere tech?**
+    Se vuoi, puoi dare un’occhiata ai miei progetti su <u>[GitHub](https://github.com/M2Max)</u> oppure scrivermi direttamente <u>[cliccando qui](mailto:info@maxmamone.it)</u> <br><br>
+    Sono disponibile per attività di consulenza, sviluppo di progetti basati su AI, automazione di processi e addestramento di modelli personalizzati sui tuoi dati, anche con soluzioni deployate in locale quando servono controllo e privacy.<br><br>
+
+    Che tu abbia una _**domanda**_, un’idea da esplorare o un _**progetto**_ concreto da avviare, _**scrivimi**_ senza problemi: confrontarsi e imparare insieme è sempre un buon punto di partenza.
   button:
     enable: true
     label: "Scrivimi"
