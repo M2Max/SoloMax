@@ -1,12 +1,13 @@
 ############# Navigazione (Italiano) ##############
 
 # main menu
-[[main]]
-name = "Home"
-url = "/"
-weight = 1
+# Temporarily disabled - uncomment to re-enable
+# [[main]]
+# name = "Home"
+# url = "/"
+# weight = 1
 
-[[main]]
-name = "Blog"
-url = "/blog"
-weight = 2
+# [[main]]
+# name = "Blog"
+# url = "/blog"
+# weight = 2
