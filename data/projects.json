@@ -1,28 +1,28 @@
 [
   {
-    "name": "Autonomous Prospect Interaction Whatsapp AI Agent",
-    "description": "An AI agent that autonomously interacts with prospects on WhatsApp, providing personalized responses, collecting necessary data for enhanced consultancy customization, and driving sales.",
+    "name": "Agente AI per l'interazione con prospect su WhatsApp",
+    "description": "Agente AI progettato per interagire autonomamente con i prospect su WhatsApp, fornire risposte personalizzate, raccogliere le informazioni necessarie e supportare un processo commerciale più efficace.",
     "tech": ["Python", "Twilio", "Azure", "OpenAI"],
-    "image": "/images/projects/project-placeholder.png",
+    "image": "/images/projects/autonomouswhatsapp.png",
     "github": "",
     "demo": "",
     "featured": true
   },
   {
-    "name": "Another Project",
-    "description": "Short description of what this app does and the problem it solves.",
-    "tech": ["TypeScript", "Next.js", "OpenAI"],
-    "image": "/images/projects/project-placeholder.png",
-    "github": "https://github.com/M2Max/",
+    "name": "Automazione LLM-based per l'estrazione dati dalle prenotazioni",
+    "description": "Sistema sviluppato per un carrier broker per gestire prenotazioni ricevute via email, con estrazione automatica dei dati, richieste di integrazione per le informazioni mancanti e creazione della prenotazione sulla piattaforma dedicata.",
+    "tech": ["Python", "Azure", "OpenAI"],
+    "image": "/images/projects/emailautomation.png",
+    "github": "",
     "demo": "",
     "featured": true
   },
   {
-    "name": "Third Project",
-    "description": "Short description of what this app does and the problem it solves.",
-    "tech": ["Python", "LangChain", "Docker"],
-    "image": "/images/projects/project-placeholder.png",
-    "github": "https://github.com/M2Max/",
+    "name": "Estrazione dati da PDF e matching con dati cliente",
+    "description": "Soluzione AI per l'estrazione di dati da PDF scansionati o editabili, senza dipendere da template fissi, con adattamento ai requisiti specifici dei diversi contesti cliente.",
+    "tech": ["Python", "Mistral DocumentAI/OCR models", "Azure", "OpenAI"],
+    "image": "/images/projects/pdfanalysis.png",
+    "github": "",
     "demo": "",
     "featured": true
   }

@@ -29,6 +29,13 @@
 .portfolio-card-img {
   min-height: 180px;
 }
+/* Remove inline baseline gap from the image module's picture/img output */
+.portfolio-card-img img,
+.portfolio-card-img picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 /* Fixed-height zones so all cards align across a row */
 .portfolio-card-title {
