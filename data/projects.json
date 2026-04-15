@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Autonomous Prospect Interaction Whatsapp AI Agent",
+    "description": "An AI agent that autonomously interacts with prospects on WhatsApp, providing personalized responses, collecting necessary data for enhanced consultancy customization, and driving sales.",
+    "tech": ["Python", "Twilio", "Azure", "OpenAI"],
+    "image": "/images/projects/project-placeholder.png",
+    "github": "",
+    "demo": "",
+    "featured": true
+  },
+  {
+    "name": "Another Project",
+    "description": "Short description of what this app does and the problem it solves.",
+    "tech": ["TypeScript", "Next.js", "OpenAI"],
+    "image": "/images/projects/project-placeholder.png",
+    "github": "https://github.com/M2Max/",
+    "demo": "",
+    "featured": true
+  },
+  {
+    "name": "Third Project",
+    "description": "Short description of what this app does and the problem it solves.",
+    "tech": ["Python", "LangChain", "Docker"],
+    "image": "/images/projects/project-placeholder.png",
+    "github": "https://github.com/M2Max/",
+    "demo": "",
+    "featured": true
+  }
+]

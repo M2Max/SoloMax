@@ -1,1 +1,112 @@
 /* Add your own custom styles here */
+
+/* ─── Scroll reveal ─────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ─── Alternating section background ───────────────────────── */
+.section-alt {
+  background-color: var(--color-light);
+}
+.dark .section-alt {
+  background-color: var(--color-darkmode-light);
+}
+
+/* ─── Portfolio cards ───────────────────────────────────────── */
+.portfolio-card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+.dark .portfolio-card {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
+.portfolio-card-img {
+  min-height: 180px;
+}
+
+/* Fixed-height zones so all cards align across a row */
+.portfolio-card-title {
+  height: 3rem;            /* ≈ 2 lines of text-base */
+  overflow: hidden;
+}
+.portfolio-card-desc {
+  height: 4.5rem;          /* ≈ 3 lines of text-sm */
+  overflow: hidden;
+}
+
+/* ─── Project detail modal (<dialog>) ──────────────────────── */
+.project-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 640px;
+  width: 90vw;
+  max-height: 90vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 1rem;
+  background: var(--color-light);
+  color: var(--color-text-default);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.dark .project-modal,
+.project-modal:where(.dark *) {
+  background: var(--color-darkmode-light);
+  color: var(--color-darkmode-text-default);
+}
+
+/* Backdrop */
+.project-modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Inner wrapper for scroll */
+.project-modal-inner {
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* Close button */
+.project-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  font-size: 1.25rem;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  transition: background 0.2s;
+}
+.project-modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+/* Open / close animation */
+.project-modal[open] {
+  animation: modal-in 0.25s ease forwards;
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translate(-50%, -50%) translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
+}

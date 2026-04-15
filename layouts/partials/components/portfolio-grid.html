@@ -1,0 +1,166 @@
+{{/*
+  Partial: components/portfolio-grid
+  Renders a responsive grid of project cards from site.Data.projects
+  Each card has fixed-height sections; a "Read More" button opens a detail modal.
+*/}}
+<div class="row gy-4">
+  {{ range $i, $p := site.Data.projects }}
+    <div class="md:col-6 lg:col-4">
+      <div class="portfolio-card group h-full flex flex-col rounded-2xl border border-border dark:border-darkmode-border bg-light dark:bg-darkmode-light overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-black/40">
+
+        {{/* Project image or placeholder */}}
+        <div class="portfolio-card-img relative overflow-hidden bg-body dark:bg-darkmode-body aspect-video">
+          {{ if and $p.image (ne $p.image "/images/projects/project-placeholder.png") }}
+            <img
+              src="{{ $p.image }}"
+              alt="{{ $p.name }}"
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          {{ else }}
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f4a261]/15 to-[#4d9f90]/10">
+              <span class="text-5xl font-bold text-[#f4a261]/50 select-none">
+                {{ substr $p.name 0 1 | upper }}
+              </span>
+            </div>
+          {{ end }}
+        </div>
+
+        {{/* Card body – fixed-height zones */}}
+        <div class="flex flex-col flex-1 p-6">
+
+          {{/* Title – fixed 3.5rem (≈ 2 lines) */}}
+          <h3 class="portfolio-card-title text-base font-semibold mb-2 text-text-dark dark:text-white line-clamp-2">
+            {{ $p.name }}
+          </h3>
+
+          {{/* Description – fixed 5rem (≈ 3-4 lines) */}}
+          <p class="portfolio-card-desc text-sm text-text dark:text-darkmode-text mb-3 leading-relaxed line-clamp-3">
+            {{ $p.description }}
+          </p>
+
+          {{/* Read More trigger */}}
+          <button
+            type="button"
+            class="text-xs font-semibold text-[#f4a261] hover:text-[#e08c4a] transition-colors mb-4 self-start"
+            onclick="document.getElementById('project-modal-{{ $i }}').showModal()">
+            Read More &rarr;
+          </button>
+
+          {{/* Tech badges */}}
+          <div class="flex flex-wrap gap-2 mb-5 flex-1 content-start">
+            {{ range $p.tech }}
+              <span class="text-xs font-semibold px-2.5 py-1 h-fit rounded-full border border-[#f4a261]/40 text-[#f4a261] bg-[#f4a261]/10">
+                {{ . }}
+              </span>
+            {{ end }}
+          </div>
+
+          {{/* Action links */}}
+          <div class="flex items-center gap-3">
+            {{ if $p.github }}
+              <a
+                href="{{ $p.github }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-text-dark dark:text-white hover:text-[#f4a261] transition-colors"
+                aria-label="GitHub repo for {{ $p.name }}">
+                <i class="fa-brands fa-github text-lg"></i>
+                GitHub
+              </a>
+            {{ end }}
+            {{ if $p.demo }}
+              <a
+                href="{{ $p.demo }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-sm ml-auto">
+                Live Demo
+                <i class="fa fa-arrow-up-right-from-square pl-1.5 text-xs"></i>
+              </a>
+            {{ end }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {{/* ── Detail modal ─────────────────────────────────────── */}}
+    <dialog id="project-modal-{{ $i }}" class="project-modal">
+      <div class="project-modal-inner">
+
+        {{/* Close button */}}
+        <button
+          type="button"
+          class="project-modal-close"
+          aria-label="Close"
+          onclick="this.closest('dialog').close()">
+          &times;
+        </button>
+
+        {{/* Modal header image */}}
+        <div class="portfolio-card-img relative overflow-hidden bg-body dark:bg-darkmode-body aspect-video rounded-t-2xl">
+          {{ if and $p.image (ne $p.image "/images/projects/project-placeholder.png") }}
+            <img
+              src="{{ $p.image }}"
+              alt="{{ $p.name }}"
+              loading="lazy"
+              class="w-full h-full object-cover" />
+          {{ else }}
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f4a261]/15 to-[#4d9f90]/10">
+              <span class="text-5xl font-bold text-[#f4a261]/50 select-none">
+                {{ substr $p.name 0 1 | upper }}
+              </span>
+            </div>
+          {{ end }}
+        </div>
+
+        {{/* Modal body */}}
+        <div class="p-8">
+          <h2 class="text-h4 font-bold mb-4 text-text-dark dark:text-white">
+            {{ $p.name }}
+          </h2>
+
+          <p class="text-base text-text dark:text-darkmode-text leading-relaxed mb-6">
+            {{ $p.description }}
+          </p>
+
+          {{/* Tech badges */}}
+          {{ if $p.tech }}
+            <div class="flex flex-wrap gap-2 mb-6">
+              {{ range $p.tech }}
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full border border-[#f4a261]/40 text-[#f4a261] bg-[#f4a261]/10">
+                  {{ . }}
+                </span>
+              {{ end }}
+            </div>
+          {{ end }}
+
+          {{/* Action links */}}
+          <div class="flex items-center gap-4">
+            {{ if $p.github }}
+              <a
+                href="{{ $p.github }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm font-semibold text-text-dark dark:text-white hover:text-[#f4a261] transition-colors">
+                <i class="fa-brands fa-github text-lg"></i>
+                GitHub
+              </a>
+            {{ end }}
+            {{ if $p.demo }}
+              <a
+                href="{{ $p.demo }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-sm ml-auto">
+                Live Demo
+                <i class="fa fa-arrow-up-right-from-square pl-1.5 text-xs"></i>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+    </dialog>
+  {{ end }}
+</div>
