@@ -10,7 +10,7 @@
 
         {{/* Project image or placeholder — clicking opens the detail modal */}}
         <div class="portfolio-card-img relative overflow-hidden bg-body dark:bg-darkmode-body aspect-video cursor-pointer"
-             onclick="document.getElementById('project-modal-{{ $i }}').showModal()">
+             onclick="openProjectModal('project-modal-{{ $i }}')">
           {{ if $p.image }}
             {{ partial "image" (dict "Src" $p.image "Alt" $p.name "Loading" "lazy" "Class" "w-full h-full object-cover transition-transform duration-500 group-hover:scale-105") }}
           {{ else }}
@@ -39,7 +39,7 @@
           <button
             type="button"
             class="text-xs font-semibold text-[#f4a261] hover:text-[#e08c4a] transition-colors mb-4 self-start"
-            onclick="document.getElementById('project-modal-{{ $i }}').showModal()">
+            onclick="openProjectModal('project-modal-{{ $i }}')">
             Read More &rarr;
           </button>
 
@@ -94,16 +94,29 @@
           &times;
         </button>
 
-        {{/* Modal header image */}}
-        <div class="portfolio-card-img relative overflow-hidden bg-body dark:bg-darkmode-body aspect-video rounded-t-2xl">
-          {{ if $p.image }}
-            {{ partial "image" (dict "Src" $p.image "Alt" $p.name "Loading" "lazy" "Class" "w-full h-full object-cover") }}
+        {{/* Modal header media */}}
+        <div class="portfolio-card-img relative overflow-hidden bg-body dark:bg-darkmode-body {{ if $p.modalVideo }}max-h-[70vh] rounded-t-2xl bg-black{{ else }}aspect-video rounded-t-2xl{{ end }}">
+          {{ if $p.modalVideo }}
+            <video
+              class="block w-full h-auto max-h-[70vh] object-contain mx-auto bg-black"
+              controls
+              preload="metadata"
+              playsinline
+              aria-label="Demo video for {{ $p.name }}">
+              <source src="{{ $p.modalVideo }}" type="video/quicktime" />
+              <source src="{{ $p.modalVideo }}" />
+              Your browser cannot play this MOV file.
+            </video>
           {{ else }}
-            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f4a261]/15 to-[#4d9f90]/10">
-              <span class="text-5xl font-bold text-[#f4a261]/50 select-none">
-                {{ substr $p.name 0 1 | upper }}
-              </span>
-            </div>
+            {{ if $p.image }}
+              {{ partial "image" (dict "Src" $p.image "Alt" $p.name "Loading" "lazy" "Class" "w-full h-full object-cover") }}
+            {{ else }}
+              <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f4a261]/15 to-[#4d9f90]/10">
+                <span class="text-5xl font-bold text-[#f4a261]/50 select-none">
+                  {{ substr $p.name 0 1 | upper }}
+                </span>
+              </div>
+            {{ end }}
           {{ end }}
         </div>
 

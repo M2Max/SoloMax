@@ -4,6 +4,7 @@
     "description": "Agente AI progettato per interagire autonomamente con i prospect su WhatsApp, fornire risposte personalizzate, raccogliere le informazioni necessarie e supportare un processo commerciale più efficace.",
     "tech": ["Python", "Twilio", "Azure", "OpenAI"],
     "image": "/images/projects/autonomouswhatsapp.png",
+    "modalVideo": "/videos/whatsapp-demo.mov",
     "github": "",
     "demo": "",
     "featured": true

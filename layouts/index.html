@@ -205,11 +205,38 @@
 
   <!-- Close project modals on backdrop click -->
   <script>
+    function stopProjectModalVideo(dialog) {
+      var video = dialog.querySelector('video');
+      if (!video) return;
+      video.pause();
+      video.currentTime = 0;
+    }
+
+    function openProjectModal(modalId) {
+      var dialog = document.getElementById(modalId);
+      if (!dialog) return;
+      dialog.showModal();
+
+      // Keep autoplay tied to the same user action that opened the modal.
+      var video = dialog.querySelector('video');
+      if (!video) return;
+      video.currentTime = 0;
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function () {});
+      }
+    }
+
     document.querySelectorAll('.project-modal').forEach(function (dialog) {
       dialog.addEventListener('click', function (e) {
         if (e.target === dialog) {
+          stopProjectModalVideo(dialog);
           dialog.close();
         }
+      });
+
+      dialog.addEventListener('close', function () {
+        stopProjectModalVideo(dialog);
       });
     });
   </script>
