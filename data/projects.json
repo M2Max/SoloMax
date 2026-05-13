@@ -14,6 +14,7 @@
     "description": "Sistema sviluppato per un carrier broker per gestire prenotazioni ricevute via email, con estrazione automatica dei dati, richieste di integrazione per le informazioni mancanti e creazione della prenotazione sulla piattaforma dedicata.",
     "tech": ["Python", "Azure", "OpenAI"],
     "image": "/images/projects/emailautomation.png",
+    "modalVideo": "/videos/email-extraction-video.mov",
     "github": "",
     "demo": "",
     "featured": true
